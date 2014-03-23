@@ -1,0 +1,520 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Motivation</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-02-25"><meta name="DC.source" content="Session0_motivation.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Motivation</h1><!--introduction--><p>some cool example plots generated entirely in matlab</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Line Plot 2D</a></li><li><a href="#2">Dendrograms</a></li><li><a href="#3">Plot in plots</a></li><li><a href="#4">Curve Fit with Confidence Bounds</a></li><li><a href="#5">Plot 3D spectra</a></li><li><a href="#6">3D plotting</a></li><li><a href="#7">Intensity map an image</a></li><li><a href="#8">3D bone</a></li><li><a href="#9">Wind</a></li><li><a href="#10">Flow cytometry</a></li><li><a href="#11">END</a></li></ul></div><h2>Line Plot 2D<a name="1"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35214-matlab-plot-gallery-line-plot-2d-1/content/html/Line_Plot_2D_1.html</span>
+<span class="comment">% Define values for x, y1, and y2</span>
+x  = 0: .1 : 2*pi;
+y1 = cos(x);
+y2 = sin(x);
+
+<span class="comment">% Plot y1 vs. x (blue, solid) and y2 vs. x (red, dashed)</span>
+figure;
+plot(x, y1, <span class="string">'b'</span>, x, y2, <span class="string">'r-.'</span>, <span class="string">'linewidth'</span>, 2);
+
+<span class="comment">% Turn on the grid</span>
+grid <span class="string">on</span>;
+
+<span class="comment">% Set the axis limits</span>
+axis([0 2*pi -1.5 1.5]);
+
+<span class="comment">% Add title and axis labels</span>
+title(<span class="string">'Trigonometric Functions'</span>, <span class="string">'fontsize'</span>, 10);
+xlabel(<span class="string">'angle'</span>);
+ylabel(<span class="string">'sin(x) and cos(x)'</span>);
+</pre><img vspace="5" hspace="5" src="Session0_motivation_01.png" alt=""> <h2>Dendrograms<a name="2"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/help/stats/dendrogram.html</span>
+rng(<span class="string">'default'</span>) <span class="comment">% For reproducibility</span>
+X = rand(10,3);
+
+tree = linkage(X,<span class="string">'average'</span>);
+
+figure()
+H = dendrogram(tree,<span class="string">'Orientation'</span>,<span class="string">'left'</span>,<span class="string">'ColorThreshold'</span>,<span class="string">'default'</span>);
+set(H,<span class="string">'LineWidth'</span>,2)
+</pre><img vspace="5" hspace="5" src="Session0_motivation_02.png" alt=""> <h2>Plot in plots<a name="3"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35245-matlab-plot-gallery-plot-in-plot/content/html/Plot_in_Plot.html</span>
+<span class="comment">% Create data</span>
+t = linspace(0,2*pi);
+t(1) = eps;
+y = sin(t);
+
+<span class="comment">% Place axes at (0.1,0.1) with width and height of 0.8</span>
+figure;
+handaxes1 = axes(<span class="string">'position'</span>, [0.1 0.1 0.8 0.8]);
+
+<span class="comment">% Main plot</span>
+plot(t, y);
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'sin(t)'</span>);
+set(handaxes1, <span class="string">'box'</span>, <span class="string">'off'</span>);
+
+<span class="comment">% Adjust XY label font</span>
+handxlabel1 = get(gca, <span class="string">'xlabel'</span>);
+set(handxlabel1, <span class="string">'fontsize'</span>, 16, <span class="string">'fontweight'</span>, <span class="string">'bold'</span>);
+handylabel1 = get(gca, <span class="string">'ylabel'</span>);
+set(handylabel1, <span class="string">'fontsize'</span>, 16, <span class="string">'fontweight'</span>, <span class="string">'bold'</span>);
+
+<span class="comment">% Place second set of axes on same plot</span>
+handaxes2 = axes(<span class="string">'position'</span>, [0.6 0.6 0.2 0.2]);
+fill(t, y.^2, <span class="string">'g'</span>);
+set(handaxes2, <span class="string">'box'</span>, <span class="string">'off'</span>);
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'(sin(t))^2'</span>);
+
+<span class="comment">% Adjust XY label font</span>
+set(get(handaxes2, <span class="string">'xlabel'</span>), <span class="string">'fontname'</span>, <span class="string">'times'</span>)
+set(get(handaxes2, <span class="string">'ylabel'</span>), <span class="string">'fontname'</span>, <span class="string">'times'</span>)
+
+<span class="comment">% Add another set of axes</span>
+handaxes3 = axes(<span class="string">'position'</span>, [0.25 0.25 0.2 0.2]);
+plot(t, y.^3);
+set(handaxes3, <span class="string">'box'</span>,<span class="string">'off'</span>);
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'(sin(t))^3'</span>);
+</pre><img vspace="5" hspace="5" src="Session0_motivation_03.png" alt=""> <h2>Curve Fit with Confidence Bounds<a name="4"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35243-matlab-plot-gallery-curve-fit-with-confidence-bounds/content/html/Curve_Fit_with_Confidence_Bounds.html</span>
+<span class="comment">% Load the data for x, y, and yfit</span>
+load <span class="string">fitdata</span> <span class="string">x</span> <span class="string">y</span> <span class="string">yfit</span>;
+
+<span class="comment">% Create a scatter plot of the original x and y data</span>
+figure;
+scatter(x, y, <span class="string">'k'</span>);
+
+<span class="comment">% Plot the fit of the y data</span>
+line(x, yfit, <span class="string">'color'</span>, <span class="string">'k'</span>, <span class="string">'linestyle'</span>, <span class="string">'-'</span>, <span class="string">'linewidth'</span>, 2);
+
+<span class="comment">% Plot the confidence bounds</span>
+line(x, yfit + 0.3, <span class="string">'color'</span>, <span class="string">'r'</span>, <span class="string">'linestyle'</span>, <span class="string">'--'</span>, <span class="string">'linewidth'</span>, 2);
+line(x, yfit - 0.3, <span class="string">'color'</span>, <span class="string">'r'</span>, <span class="string">'linestyle'</span>, <span class="string">'--'</span>, <span class="string">'linewidth'</span>, 2);
+
+<span class="comment">% Add a legend and axis labels</span>
+legend(<span class="string">'Data'</span>, <span class="string">'Localized Regression'</span>, <span class="string">'Confidence Intervals'</span>, 2);
+xlabel(<span class="string">'X'</span>);
+ylabel(<span class="string">'Noisy'</span>);
+</pre><img vspace="5" hspace="5" src="Session0_motivation_04.png" alt=""> <h2>Plot 3D spectra<a name="5"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35262-matlab-plot-gallery-line-plot-3d/content/html/Line_Plot_3D.html</span>
+<span class="comment">% Load the spectra data</span>
+load <span class="string">spectraData</span> <span class="string">masscharge</span> <span class="string">time</span> <span class="string">spectra</span>;
+
+<span class="comment">% Create the 3D plot</span>
+figure;
+plot3(masscharge, time, spectra);
+box <span class="string">on</span>;
+
+<span class="comment">% Set the viewing angle and the axis limits</span>
+view(26, 42);
+axis([500 900 0 22 0 4e8]);
+
+<span class="comment">% Add title and axis labels</span>
+xlabel(<span class="string">'Mass/Charge (M/Z)'</span>);
+ylabel(<span class="string">'Time'</span>);
+zlabel(<span class="string">'Ion Spectra'</span>);
+title(<span class="string">'Extracted Spectra Subset'</span>);
+</pre><img vspace="5" hspace="5" src="Session0_motivation_05.png" alt=""> <h2>3D plotting<a name="6"></a></h2><pre class="codeinput">figure
+[x,y]=meshgrid(-7 : 0.25 : 7 , -7 : 0.25 : 7);
+subplot(2,2,1);
+z = (0.5*sin(x)) .* (0.5*cos(y));
+surf(x,y,z);
+shading <span class="string">interp</span>;
+
+[x,y]=meshgrid(-12 : 0.25 : 12 , -12 : 0.25 : 12);
+subplot(2,2,2);
+z = exp(-((x-4).^2+(y-4).^2).^2./1000) + exp(-((x+4).^2+(y+4).^2).^2./1000) + 0.1.*exp(-((x+4).^2+(y+4).^2).^2)+0.1.*exp(-((x-4).^2+(y-4).^2).^2);
+surf(x,y,z);
+shading <span class="string">interp</span>;
+
+[x,y]=meshgrid(-2 : 0.1 : 2 , -2 : 0.1 : 2);
+subplot(2,2,3);
+z = sinc( sqrt (x.^2 + y.^2));
+surf(x,y,z);
+shading <span class="string">interp</span>;
+
+subplot(2,2,4);
+[p,t] = meshgrid(linspace(-pi,pi,30),linspace(0,pi,15));
+X=cos(p).*sin(t)*365756765756765757;
+Y=sin(p).*sin(t)*1000000;
+Z = cos(t);
+surf(X,Y,Z);
+shading <span class="string">interp</span>;
+
+rotate3d <span class="string">on</span>;
+</pre><img vspace="5" hspace="5" src="Session0_motivation_06.png" alt=""> <h2>Intensity map an image<a name="7"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35301-matlab-plot-gallery-display-image-3/content/html/Display_Image_3.html</span>
+<span class="comment">% Read the data for the original image</span>
+original = imread(<span class="string">'ngc6543a.jpg'</span>);
+
+<span class="comment">% Create the first image display using the image command</span>
+figure;
+subplot(1, 2, 1);
+image(original);
+axis <span class="string">square</span>;
+
+<span class="comment">% Add title for first image</span>
+title(<span class="string">'Original image'</span>);
+
+<span class="comment">% Create the data for the second image</span>
+heatmap = mean(original, 3);
+
+<span class="comment">% Create the second image display using the image command</span>
+subplot(1, 2, 2);
+image(heatmap);
+colormap(hot);
+axis <span class="string">square</span>;
+
+<span class="comment">% Add title for the second image</span>
+title(<span class="string">'Intensity Heat Map'</span>);
+</pre><img vspace="5" hspace="5" src="Session0_motivation_07.png" alt=""> <h2>3D bone<a name="8"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35233-matlab-plot-gallery-using-colorbars-2/content/dd_Colorbar_to_Plot_2.zip</span>
+<span class="comment">% Load spine data</span>
+load <span class="string">spine</span> <span class="string">X</span>;
+
+<span class="comment">% Create an image plot of the spine data</span>
+figure;
+imagesc(X);
+colormap <span class="string">bone</span>;
+
+<span class="comment">% Add a horizontal colorbar to the bottom of the plot</span>
+colorbar(<span class="string">'SouthOutside'</span>);
+axis <span class="string">square</span>;
+</pre><img vspace="5" hspace="5" src="Session0_motivation_08.png" alt=""> <h2>Wind<a name="9"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/35250-matlab-plot-gallery-wind/content/html/Wind.html</span>
+<span class="comment">% Load wind data</span>
+load <span class="string">wind</span> <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">u</span> <span class="string">v</span> <span class="string">w</span>;
+
+<span class="comment">% Compute speed</span>
+spd = sqrt(u.*u + v.*v + w.*w);
+
+figure;
+
+<span class="comment">% Create isosurface patch</span>
+p = patch(isosurface(x, y, z, spd, 40));
+isonormals(x, y, z, spd, p)
+set(p, <span class="string">'FaceColor'</span>, <span class="string">'red'</span>, <span class="string">'EdgeColor'</span>, <span class="string">'none'</span>);
+
+<span class="comment">% Create isosurface end-caps</span>
+p2 = patch(isocaps(x, y, z, spd, 40));
+set(p2, <span class="string">'FaceColor'</span>, <span class="string">'interp'</span>, <span class="string">'EdgeColor'</span>, <span class="string">'none'</span>)
+
+<span class="comment">% Adjust aspect ratio</span>
+daspect([1 1 1]);
+
+<span class="comment">% Downsample patch</span>
+[f, verts] = reducepatch(isosurface(x, y, z, spd, 30), .2);
+
+<span class="comment">% Create coneplot (velocity cone)</span>
+h = coneplot(x, y, z, u, v, w, verts(:, 1), verts(:, 2), verts(:, 3), 2);
+set(h, <span class="string">'FaceColor'</span>, <span class="string">'cyan'</span>, <span class="string">'EdgeColor'</span>, <span class="string">'none'</span>);
+
+<span class="comment">% Create streamline</span>
+[sx, sy, sz] = meshgrid(80, 20:10:50, 0:5:15);
+h2 = streamline(x, y, z, u, v, w, sx, sy, sz);
+set(h2, <span class="string">'Color'</span>, [.4 1 .4]);
+
+<span class="comment">% Adjust colormap and axes settings</span>
+colormap(jet);
+box <span class="string">on</span>;
+axis <span class="string">tight</span>;
+camproj <span class="string">perspective</span>;
+camva(34);
+campos([165 -20 65]);
+camtarget([100 40 -5]);
+camlight <span class="string">left</span>;
+lighting <span class="string">gouraud</span>;
+</pre><img vspace="5" hspace="5" src="Session0_motivation_09.png" alt=""> <h2>Flow cytometry<a name="10"></a></h2><pre class="codeinput"><span class="comment">%http://www.mathworks.com/matlabcentral/fileexchange/8430-flow-cytometry-data-reader-and-visualization</span>
+figure;
+facsdemo <span class="comment">%run analysis/plot of facs data</span>
+</pre><img vspace="5" hspace="5" src="Session0_motivation_10.png" alt=""> <h2>END<a name="11"></a></h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Motivation
+% some cool example plots generated entirely in matlab
+
+%% Line Plot 2D 
+%http://www.mathworks.com/matlabcentral/fileexchange/35214-matlab-plot-gallery-line-plot-2d-1/content/html/Line_Plot_2D_1.html
+% Define values for x, y1, and y2
+x  = 0: .1 : 2*pi;
+y1 = cos(x);
+y2 = sin(x);
+
+% Plot y1 vs. x (blue, solid) and y2 vs. x (red, dashed)
+figure;
+plot(x, y1, 'b', x, y2, 'r-.', 'linewidth', 2);
+
+% Turn on the grid
+grid on;
+
+% Set the axis limits
+axis([0 2*pi -1.5 1.5]);
+
+% Add title and axis labels
+title('Trigonometric Functions', 'fontsize', 10);
+xlabel('angle');
+ylabel('sin(x) and cos(x)');
+
+%% Dendrograms
+%http://www.mathworks.com/help/stats/dendrogram.html
+rng('default') % For reproducibility
+X = rand(10,3);
+
+tree = linkage(X,'average');
+
+figure()
+H = dendrogram(tree,'Orientation','left','ColorThreshold','default');
+set(H,'LineWidth',2)
+
+%% Plot in plots
+%http://www.mathworks.com/matlabcentral/fileexchange/35245-matlab-plot-gallery-plot-in-plot/content/html/Plot_in_Plot.html
+% Create data
+t = linspace(0,2*pi);
+t(1) = eps;
+y = sin(t);
+
+% Place axes at (0.1,0.1) with width and height of 0.8
+figure;
+handaxes1 = axes('position', [0.1 0.1 0.8 0.8]);
+
+% Main plot
+plot(t, y);
+xlabel('t'); ylabel('sin(t)');
+set(handaxes1, 'box', 'off');
+
+% Adjust XY label font
+handxlabel1 = get(gca, 'xlabel');
+set(handxlabel1, 'fontsize', 16, 'fontweight', 'bold');
+handylabel1 = get(gca, 'ylabel');
+set(handylabel1, 'fontsize', 16, 'fontweight', 'bold');
+
+% Place second set of axes on same plot
+handaxes2 = axes('position', [0.6 0.6 0.2 0.2]);
+fill(t, y.^2, 'g');
+set(handaxes2, 'box', 'off');
+xlabel('t'); ylabel('(sin(t))^2');
+
+% Adjust XY label font
+set(get(handaxes2, 'xlabel'), 'fontname', 'times')
+set(get(handaxes2, 'ylabel'), 'fontname', 'times')
+
+% Add another set of axes
+handaxes3 = axes('position', [0.25 0.25 0.2 0.2]);
+plot(t, y.^3);
+set(handaxes3, 'box','off');
+xlabel('t'); ylabel('(sin(t))^3');
+
+%% Curve Fit with Confidence Bounds
+%http://www.mathworks.com/matlabcentral/fileexchange/35243-matlab-plot-gallery-curve-fit-with-confidence-bounds/content/html/Curve_Fit_with_Confidence_Bounds.html
+% Load the data for x, y, and yfit
+load fitdata x y yfit;
+
+% Create a scatter plot of the original x and y data
+figure;
+scatter(x, y, 'k');
+
+% Plot the fit of the y data
+line(x, yfit, 'color', 'k', 'linestyle', '-', 'linewidth', 2);
+
+% Plot the confidence bounds
+line(x, yfit + 0.3, 'color', 'r', 'linestyle', 'REPLACE_WITH_DASH_DASH', 'linewidth', 2);
+line(x, yfit - 0.3, 'color', 'r', 'linestyle', 'REPLACE_WITH_DASH_DASH', 'linewidth', 2);
+
+% Add a legend and axis labels
+legend('Data', 'Localized Regression', 'Confidence Intervals', 2);
+xlabel('X');
+ylabel('Noisy');
+
+%% Plot 3D spectra
+%http://www.mathworks.com/matlabcentral/fileexchange/35262-matlab-plot-gallery-line-plot-3d/content/html/Line_Plot_3D.html
+% Load the spectra data
+load spectraData masscharge time spectra;
+
+% Create the 3D plot
+figure;
+plot3(masscharge, time, spectra);
+box on;
+
+% Set the viewing angle and the axis limits
+view(26, 42);
+axis([500 900 0 22 0 4e8]);
+
+% Add title and axis labels
+xlabel('Mass/Charge (M/Z)');
+ylabel('Time');
+zlabel('Ion Spectra');
+title('Extracted Spectra Subset');
+
+%% 3D plotting
+figure
+[x,y]=meshgrid(-7 : 0.25 : 7 , -7 : 0.25 : 7);
+subplot(2,2,1);
+z = (0.5*sin(x)) .* (0.5*cos(y));
+surf(x,y,z);
+shading interp;
+
+[x,y]=meshgrid(-12 : 0.25 : 12 , -12 : 0.25 : 12);
+subplot(2,2,2);
+z = exp(-((x-4).^2+(y-4).^2).^2./1000) + exp(-((x+4).^2+(y+4).^2).^2./1000) + 0.1.*exp(-((x+4).^2+(y+4).^2).^2)+0.1.*exp(-((x-4).^2+(y-4).^2).^2);
+surf(x,y,z);
+shading interp;
+
+[x,y]=meshgrid(-2 : 0.1 : 2 , -2 : 0.1 : 2);
+subplot(2,2,3);
+z = sinc( sqrt (x.^2 + y.^2));
+surf(x,y,z);
+shading interp;
+
+subplot(2,2,4);
+[p,t] = meshgrid(linspace(-pi,pi,30),linspace(0,pi,15));
+X=cos(p).*sin(t)*365756765756765757;
+Y=sin(p).*sin(t)*1000000;
+Z = cos(t);
+surf(X,Y,Z);
+shading interp;
+
+rotate3d on;
+
+%% Intensity map an image
+%http://www.mathworks.com/matlabcentral/fileexchange/35301-matlab-plot-gallery-display-image-3/content/html/Display_Image_3.html
+% Read the data for the original image
+original = imread('ngc6543a.jpg');
+
+% Create the first image display using the image command
+figure;
+subplot(1, 2, 1);
+image(original);
+axis square;
+
+% Add title for first image
+title('Original image');
+
+% Create the data for the second image
+heatmap = mean(original, 3);
+
+% Create the second image display using the image command
+subplot(1, 2, 2);
+image(heatmap);
+colormap(hot);
+axis square;
+
+% Add title for the second image
+title('Intensity Heat Map');
+
+%% 3D bone 
+%http://www.mathworks.com/matlabcentral/fileexchange/35233-matlab-plot-gallery-using-colorbars-2/content/dd_Colorbar_to_Plot_2.zip
+% Load spine data
+load spine X;
+
+% Create an image plot of the spine data
+figure;
+imagesc(X);
+colormap bone;
+
+% Add a horizontal colorbar to the bottom of the plot
+colorbar('SouthOutside');
+axis square;
+
+%% Wind
+%http://www.mathworks.com/matlabcentral/fileexchange/35250-matlab-plot-gallery-wind/content/html/Wind.html
+% Load wind data
+load wind x y z u v w;
+
+% Compute speed
+spd = sqrt(u.*u + v.*v + w.*w);
+
+figure;
+
+% Create isosurface patch
+p = patch(isosurface(x, y, z, spd, 40));
+isonormals(x, y, z, spd, p)
+set(p, 'FaceColor', 'red', 'EdgeColor', 'none');
+
+% Create isosurface end-caps
+p2 = patch(isocaps(x, y, z, spd, 40));
+set(p2, 'FaceColor', 'interp', 'EdgeColor', 'none')
+
+% Adjust aspect ratio
+daspect([1 1 1]);
+
+% Downsample patch
+[f, verts] = reducepatch(isosurface(x, y, z, spd, 30), .2);
+
+% Create coneplot (velocity cone)
+h = coneplot(x, y, z, u, v, w, verts(:, 1), verts(:, 2), verts(:, 3), 2);
+set(h, 'FaceColor', 'cyan', 'EdgeColor', 'none');
+
+% Create streamline
+[sx, sy, sz] = meshgrid(80, 20:10:50, 0:5:15);
+h2 = streamline(x, y, z, u, v, w, sx, sy, sz);
+set(h2, 'Color', [.4 1 .4]);
+
+% Adjust colormap and axes settings
+colormap(jet);
+box on;
+axis tight;
+camproj perspective;
+camva(34);
+campos([165 -20 65]);
+camtarget([100 40 -5]);
+camlight left;
+lighting gouraud;
+
+%% Flow cytometry
+%http://www.mathworks.com/matlabcentral/fileexchange/8430-flow-cytometry-data-reader-and-visualization
+figure;
+facsdemo %run analysis/plot of facs data
+
+%% END
+
+##### SOURCE END #####
+--></body></html>
