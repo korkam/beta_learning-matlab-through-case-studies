@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab 1 overview:</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-09-03"><meta name="DC.source" content="lab1_matlab1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Lab 1 overview:</h1><!--introduction--><div><ul><li>What's MATLAB? Why MATLAB?</li><li>Interface</li><li>Variables</li><li>Matrices and vectors: creation and access</li><li>Built-in functions</li><li>Operating on matrices and vectors</li><li>Plotting</li><li>Saving your work as a script</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">What's MATLAB? Why MATLAB?</a></li><li><a href="#2">Introduction to Matlab - Interface</a></li><li><a href="#3">MATLAB as Calculator</a></li><li><a href="#4">Variables</a></li><li><a href="#5">Workspace</a></li><li><a href="#6">Matrix and vector creation: basics</a></li><li><a href="#7">EXERCISE</a></li><li><a href="#8">Vector access</a></li><li><a href="#9">Matrix access</a></li><li><a href="#10">EXERCISE</a></li><li><a href="#11">Errors in matrix creation and access</a></li><li><a href="#12">Functions</a></li><li><a href="#13">Getting help</a></li><li><a href="#14">An important aside about notation</a></li><li><a href="#15">Matrix/vector creation: using functions</a></li><li><a href="#16">Concatenating matrices</a></li><li><a href="#17">Vector math</a></li><li><a href="#18">Inner product</a></li><li><a href="#19">Outer product</a></li><li><a href="#20">Element-wise operations</a></li><li><a href="#21">Summary statistics</a></li><li><a href="#22">Plotting</a></li><li><a href="#23">Plotting multiple lines on the same axis</a></li><li><a href="#24">More visualizations: histograms and scatterplots</a></li><li><a href="#25">Scripts</a></li></ul></div><h2>What's MATLAB? Why MATLAB?<a name="1"></a></h2><p>MATLAB is a programming language and an environment.</p><p>Why code in general? You can write your own analyses.</p><p>Why use code in this course? So you can try out the math. Visualize it. Make it concrete. It's another learning tool.</p><p>Why MATLAB, not a different language? * Common in the field * Interpreted - see results immediately * Data visualization</p><h2>Introduction to Matlab - Interface<a name="2"></a></h2><p>Let's familiarize ourselves with the MATLAB interface. Work by typing these commands into the interpreter: the window with the line starting with "&gt;&gt;". Type your commands after "&gt;&gt;" and hit enter.</p><h2>MATLAB as Calculator<a name="3"></a></h2><pre class="codeinput"><span class="comment">% Copy these lines to the prompt ("&gt;&gt;" in the other window) and run them</span>
+<span class="comment">% one at a time:</span>
+3+4
+5-9
+4*6
+5*(3+4)
+26/5
+5^2
+pi
+
+<span class="comment">% You can use the "up" arrow at the prompt ("&gt;&gt;") to go back to previous</span>
+<span class="comment">% commands you typed.</span>
+<span class="comment">%</span>
+<span class="comment">% If you start typing and then use the up arrow before you're done, it will</span>
+<span class="comment">% find you all past commands that start with the letters you just typed.</span>
+</pre><pre class="codeoutput">
+ans =
+
+     7
+
+
+ans =
+
+    -4
+
+
+ans =
+
+    24
+
+
+ans =
+
+    35
+
+
+ans =
+
+    5.2000
+
+
+ans =
+
+    25
+
+
+ans =
+
+    3.1416
+
+</pre><h2>Variables<a name="4"></a></h2><p>We can assign values to variables with =</p><pre class="codeinput">a = 7;
+a
+<span class="comment">% Now, the value of our variable "a" won't change...</span>
+a + 1;
+a + 1;
+a
+<span class="comment">% ... unless we re-assign a value to it</span>
+a = 41;
+a
+
+<span class="comment">% Can we assign a variable to another variable? What happens?</span>
+b = a;
+b
+
+c = a + 1;
+c
+
+<span class="comment">% If b = a, then what happens when we change a?</span>
+a = 10;
+b
+c
+
+<span class="comment">% The way this works is that MATLAB has a lookup table. When you type</span>
+<span class="comment">% something, like "a", it looks in the lookup table for the associated</span>
+<span class="comment">% value. When you type "a = 1", it puts "1" in the lookup table as the</span>
+<span class="comment">% value for "a".</span>
+
+<span class="comment">% We don't have to be boring and use single letters as variable names. In</span>
+<span class="comment">% general, it's a VERY good idea to use descriptive names for your</span>
+<span class="comment">% variables.</span>
+darthVader = 7;
+han_solo = 4*4;
+R2D2 = (han_solo + darthVader)/2;
+
+<span class="comment">% Note that we use underscores instead of spaces in variable names.</span>
+<span class="comment">% Also, we can't use a hyphen, because "han-solo" would be read as "han" minus</span>
+<span class="comment">% "solo"!</span>
+
+<span class="comment">% Another neat feature of the prompt: If you type part of a variable name and</span>
+<span class="comment">% then hit "tab", you can see possible completions. Try typing "darth" and</span>
+<span class="comment">% then hitting tab.</span>
+</pre><pre class="codeoutput">
+a =
+
+     7
+
+
+a =
+
+     7
+
+
+a =
+
+    41
+
+
+b =
+
+    41
+
+
+c =
+
+    42
+
+
+b =
+
+    41
+
+
+c =
+
+    42
+
+</pre><h2>Workspace<a name="5"></a></h2><p>MATLAB uses a table to look up the variables. You can view this table in the "workspace" in your matlab editor. This is useful to you for keeping track of the variables you've assigned. You can view the contents with "who" ("whos" is similar and gives you more information)</p><pre class="codeinput">who
+
+<span class="comment">% You can use a semicolon to suppress output.</span>
+<span class="comment">% The command you run still causes changes in the workspace,</span>
+<span class="comment">% so your variable is different next time you look at it</span>
+
+a = 5;
+a
+
+<span class="comment">% You can also cause output to be shown with the "display" command:</span>
+display(<span class="string">'a'</span>);
+</pre><pre class="codeoutput">
+Your variables are:
+
+R2D2        ans         c           han_solo    
+a           b           darthVader  
+
+
+a =
+
+     5
+
+a
+</pre><h2>Matrix and vector creation: basics<a name="6"></a></h2><p>How to enter the matrix</p><pre class="codeinput">a = [1 2 3] <span class="comment">% This is a row</span>
+a = [1, 2, 3] <span class="comment">% This is also a row, the commas are optional</span>
+a = [1; 2; 3] <span class="comment">% This is a column: the semicolons make a new row</span>
+a = [1 2; 3 4; 5 6] <span class="comment">% This is two columns, three rows</span>
+
+<span class="comment">% How do I enter a whole range of numbers?</span>
+a = [1:10] <span class="comment">% 1 through 10, counting by 1, as a row</span>
+a = [1:2:10] <span class="comment">% Start at 1, count up by twos, don't go past 10</span>
+a = [10:-1:4] <span class="comment">% Start at 10, go down by 1, don't go past 4</span>
+
+a = [1:3; 4:6; 7:9] <span class="comment">% Make three rows of three each</span>
+
+<span class="comment">% Transpose operator flips rows and columns</span>
+a = [1:10]'
+</pre><pre class="codeoutput">
+a =
+
+     1     2     3
+
+
+a =
+
+     1     2     3
+
+
+a =
+
+     1
+     2
+     3
+
+
+a =
+
+     1     2
+     3     4
+     5     6
+
+
+a =
+
+     1     2     3     4     5     6     7     8     9    10
+
+
+a =
+
+     1     3     5     7     9
+
+
+a =
+
+    10     9     8     7     6     5     4
+
+
+a =
+
+     1     2     3
+     4     5     6
+     7     8     9
+
+
+a =
+
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+    10
+
+</pre><h2>EXERCISE<a name="7"></a></h2><p>Try creating different arrangements of the numbers 1 through 6. Can you create a row vector? A column vector? The row 1 2 3 above the row 4 5 6? The column 1 3 5 beside the column 2 4 6?</p><h2>Vector access<a name="8"></a></h2><p>Let's create a vector. A note on names: we don't have to call our variables only "a" all the time. Using descriptive names will help you later. For now, we'll call our variable "vec" so we remember that it's a vector.</p><pre class="codeinput">vec = [101:112];
+
+<span class="comment">% Access elements in a vector using parentheses</span>
+vec(2) <span class="comment">% This gives us the second element of the vector</span>
+vec(4)
+
+<span class="comment">% Access multiple elements at once</span>
+<span class="comment">% Instead of just one number in the parentheses, we can put a range of numbers.</span>
+vec(3:6); <span class="comment">% This gives us elements 3, 4, 5, and 6.</span>
+
+<span class="comment">% "end" is a special keyword for accessing the last element.</span>
+vec(end)
+vec(1:end)
+
+<span class="comment">% The colon operator alone puts everything into one column. We'll see more</span>
+<span class="comment">% of it later to understand why it's useful.</span>
+vec(:)
+</pre><pre class="codeoutput">
+ans =
+
+   102
+
+
+ans =
+
+   104
+
+
+ans =
+
+   112
+
+
+ans =
+
+   101   102   103   104   105   106   107   108   109   110   111   112
+
+
+ans =
+
+   101
+   102
+   103
+   104
+   105
+   106
+   107
+   108
+   109
+   110
+   111
+   112
+
+</pre><h2>Matrix access<a name="9"></a></h2><p>Let's create a matrix to play with, and call it "mat".</p><pre class="codeinput">mat = [1:3; 4:6; 7:9];
+
+<span class="comment">% We can use *two* subscripts to access elements of our matrix by</span>
+<span class="comment">% specifying the row and the column. (Row first, then column).</span>
+mat(2,1)
+mat(3,3)
+
+<span class="comment">% As before, each subscript can be a single number or a range of numbers</span>
+mat(2, 1:3)
+mat(1:3, 2)
+mat(2:end, 1);
+
+<span class="comment">% As before, the colon operator selects "everything": all rows and/or all columns</span>
+mat(3,:)
+mat(:,:)
+</pre><pre class="codeoutput">
+ans =
+
+     4
+
+
+ans =
+
+     9
+
+
+ans =
+
+     4     5     6
+
+
+ans =
+
+     2
+     5
+     8
+
+
+ans =
+
+     7     8     9
+
+
+ans =
+
+     1     2     3
+     4     5     6
+     7     8     9
+
+</pre><h2>EXERCISE<a name="10"></a></h2><p>Below is a matrix called "b". Write four expressions: one each to select just all the 0's, all the 1's, all the 2's, or all the 3's.</p><pre class="codeinput">b = [2 2 2; 3 1 1; 3 1 1; 0 1 1];
+</pre><h2>Errors in matrix creation and access<a name="11"></a></h2><p>Sometimes there will be an error! Thats OK! That's totally normal!</p><pre class="codeinput"><span class="comment">% Examples of failed vector access:</span>
+test = [1 2 3];
+
+<span class="comment">% test(4) % "Index exceeds matrix dimensions" because we tried to take the</span>
+<span class="comment">%   fourth element of a 1x3 vector, and 4 exceeds 3.</span>
+
+<span class="comment">% test(0) % "Subscript indices must either be real positive integers or</span>
+<span class="comment">%   logicals." We get this error because 0 is not a positive integer. Unlike</span>
+<span class="comment">%   in other programming languages, there is no "zeroth" element. The first</span>
+<span class="comment">%   element is indexed with 1.</span>
+
+<span class="comment">% test(-1) % "Index exceeds matrix dimensions" again. I have no idea why</span>
+<span class="comment">%   MATLAB doesn't first warn you that -1 isn't positive.</span>
+
+<span class="comment">% Examples of failed matrix creation</span>
+
+<span class="comment">% test = [1:3; 4:8]; % "Error using vertcat. Dimensions of matrices</span>
+<span class="comment">%    being concatenated are not consistent." The problem is that we are</span>
+<span class="comment">%    trying to put [1, 2, 3] in the top row and [4, 5, 6, 7, 8] in the</span>
+<span class="comment">%    bottom row, but the rows are not the same size so there is no way</span>
+<span class="comment">%    to "vertically concatenate" (vertcat) row 1 onto row 2.</span>
+</pre><h2>Functions<a name="12"></a></h2><pre class="codeinput"><span class="comment">% Functions are calculations that have names. For example in math notation</span>
+<span class="comment">% "y = f(x)", f is the name of the function. x is the input. y is the output.</span>
+
+<span class="comment">% Some functions perform mathematical operations:</span>
+abs(-2);
+sin(pi/2);
+round(2.7);
+ceil(2.7);
+floor(2.7);
+
+<span class="comment">% Some functions compute other properties of their inputs:</span>
+size(vec)
+size(mat)
+size(4) <span class="comment">% notice while we're here that scalars are stored in matlab as 1x1 matrices</span>
+</pre><pre class="codeoutput">
+ans =
+
+     1    12
+
+
+ans =
+
+     3     3
+
+
+ans =
+
+     1     1
+
+</pre><h2>Getting help<a name="13"></a></h2><p>MATLAB contains extensive documentation, which you can access using the "help" command to view it in the command window, or the "doc" command to pull up a pretty window.</p><pre class="codeinput">help <span class="string">size</span>
+doc <span class="string">size</span>
+
+which <span class="string">vec</span>
+which <span class="string">abs</span>
+</pre><pre class="codeoutput"> SIZE   Size of array.  
+    D = SIZE(X), for M-by-N matrix X, returns the two-element row vector
+    D = [M,N] containing the number of rows and columns in the matrix.
+    For N-D arrays, SIZE(X) returns a 1-by-N vector of dimension lengths.
+    Trailing singleton dimensions are ignored.
+ 
+    [M,N] = SIZE(X) for matrix X, returns the number of rows and columns in
+    X as separate output variables. 
+    
+    [M1,M2,M3,...,MN] = SIZE(X) for N&gt;1 returns the sizes of the first N 
+    dimensions of the array X.  If the number of output arguments N does
+    not equal NDIMS(X), then for:
+ 
+    N &gt; NDIMS(X), SIZE returns ones in the "extra" variables, i.e., outputs
+                  NDIMS(X)+1 through N.
+    N &lt; NDIMS(X), MN contains the product of the sizes of dimensions N
+                  through NDIMS(X).
+ 
+    M = SIZE(X,DIM) returns the length of the dimension specified
+    by the scalar DIM.  For example, SIZE(X,1) returns the number
+    of rows. If DIM &gt; NDIMS(X), M will be 1.
+ 
+    When SIZE is applied to a Java array, the number of rows
+    returned is the length of the Java array and the number of columns
+    is always 1.  When SIZE is applied to a Java array of arrays, the
+    result describes only the top level array in the array of arrays.
+ 
+    Example:
+    If
+       X = rand(2,3,4);
+    then
+       d = size(X)              returns  d = [2 3 4]
+       [m1,m2,m3,m4] = size(X)  returns  m1 = 2, m2 = 3, m3 = 4, m4 = 1
+       [m,n] = size(X)          returns  m = 2, n = 12
+       m2 = size(X,2)           returns  m2 = 3
+ 
+    See also LENGTH, NDIMS, NUMEL.
+
+    Overloaded methods:
+       table/size
+       categorical/size
+       timer/size
+       serial/size
+       triangulation/size
+       TriRep/size
+       dataset/size
+       tscollection/size
+
+    Reference page in Help browser
+       doc size
+
+vec is a variable.
+built-in (/mnt/storage/Matlab/duke-matlab-linux-location/toolbox/matlab/elfun/@double/abs)  % double method
+</pre><h2>An important aside about notation<a name="14"></a></h2><p>Watch out, there are two totally identical-looking parenthesis notations And they're totally different!</p><pre class="codeinput">vec(3) <span class="comment">% 1) accessing a vector/matrix element</span>
+abs(3) <span class="comment">% 2) calling a function</span>
+
+<span class="comment">% MATLAB will let you override built-in functions. Avoid this!</span>
+abs = [10, 11, 12];
+abs(3)
+
+which <span class="string">abs</span> <span class="comment">% Abs is now a variable??</span>
+<span class="comment">% Yep,'abs' is in the list of variables! MATLAB looks there first</span>
+<span class="comment">% In fact *every time* you type something, MATLAB has to look it up</span>
+
+<span class="comment">% To remove a variable from the lookup table, use "clear":</span>
+clear <span class="string">abs</span>
+which <span class="string">abs</span>
+</pre><pre class="codeoutput">
+ans =
+
+   103
+
+
+ans =
+
+     3
+
+
+ans =
+
+    12
+
+abs is a variable.
+built-in (/mnt/storage/Matlab/duke-matlab-linux-location/toolbox/matlab/elfun/@double/abs)  % double method
+</pre><h2>Matrix/vector creation: using functions<a name="15"></a></h2><pre class="codeinput">a = zeros(2, 3) <span class="comment">% Create a matrix of all zeros, with 2 rows and 3 columns</span>
+a = ones(3) <span class="comment">% Oops, this might seem like like "three ones", but it's actually 3x3!</span>
+a = ones(3,1) <span class="comment">% We need to explicitly say "3 rows, 1 column"</span>
+a = ones(1,3) <span class="comment">% or "1 row, 3 columns"</span>
+
+a = eye(3) <span class="comment">% Identity matrix</span>
+
+a = rand(3, 3) <span class="comment">% Uniform distribution</span>
+a = randn(3, 3) <span class="comment">% Normal distribution</span>
+a = randi(10, 3, 3) <span class="comment">% Integers up to 10</span>
+
+diag(a) <span class="comment">% Extract the elements along the diagonal</span>
+triu(a) <span class="comment">% Keep just the upper triangle, zero out the lower triangled(</span>
+</pre><pre class="codeoutput">
+a =
+
+     0     0     0
+     0     0     0
+
+
+a =
+
+     1     1     1
+     1     1     1
+     1     1     1
+
+
+a =
+
+     1
+     1
+     1
+
+
+a =
+
+     1     1     1
+
+
+a =
+
+     1     0     0
+     0     1     0
+     0     0     1
+
+
+a =
+
+    0.8147    0.9134    0.2785
+    0.9058    0.6324    0.5469
+    0.1270    0.0975    0.9575
+
+
+a =
+
+    2.7694    0.7254   -0.2050
+   -1.3499   -0.0631   -0.1241
+    3.0349    0.7147    1.4897
+
+
+a =
+
+     8     1     7
+    10     9     8
+     7    10     8
+
+
+ans =
+
+     8
+     9
+     8
+
+
+ans =
+
+     8     1     7
+     0     9     8
+     0     0     8
+
+</pre><h2>Concatenating matrices<a name="16"></a></h2><p>Larger matrices can be built out of smaller matrices by concatenating them together. When concatenating matrices, their sizes have to line up.</p><pre class="codeinput">c = [1:4]; <span class="comment">% 1x4: 1 row and 4 columns</span>
+d = [11:14]; <span class="comment">% another 1x4 matrix</span>
+
+<span class="comment">% Horizontal concatenation:</span>
+<span class="comment">% To stack beside each other, use a comma (like making a row vector!)</span>
+[c, d]
+
+<span class="comment">% Vertical concatenation:</span>
+<span class="comment">% To stack on top of each other, use a semicolon (like making a column vector!)</span>
+[c; d]
+
+<span class="comment">% Concatenation requires sizes to match:</span>
+e = [101:104; 105:108]; <span class="comment">% 2x4</span>
+
+<span class="comment">% [d, e] % These won't stack beside each other because they have different numbers of rows</span>
+[d; e] <span class="comment">% But one row stacks on top of two rows just fine!</span>
+</pre><pre class="codeoutput">
+ans =
+
+     1     2     3     4    11    12    13    14
+
+
+ans =
+
+     1     2     3     4
+    11    12    13    14
+
+
+ans =
+
+    11    12    13    14
+   101   102   103   104
+   105   106   107   108
+
+</pre><h2>Vector math<a name="17"></a></h2><p>Let's try some simple vector math: +, -, / (abs, floor, sin, sort)</p><pre class="codeinput"><span class="comment">% Set up variables to play with:</span>
+a = 4;
+x = [1:5];
+y = [11:15];
+z = rand(1,7);
+
+<span class="comment">% Vector multiplied by a scalar</span>
+a*x
+<span class="comment">% Vector addition and subtraction (elementwise)</span>
+x + y
+x - y
+
+<span class="comment">% Note that x + z fails, due to wrong sizes</span>
+</pre><pre class="codeoutput">
+ans =
+
+     4     8    12    16    20
+
+
+ans =
+
+    12    14    16    18    20
+
+
+ans =
+
+   -10   -10   -10   -10   -10
+
+</pre><h2>Inner product<a name="18"></a></h2><p>inner_product = x * y why didn't the above work? we can look in the workspace window, or use size to figure out our variable sizes</p><pre class="codeinput">inner_product = x * y'
+
+<span class="comment">% The inner product (dot product) sums the products of the elements.</span>
+<span class="comment">% Both of the following are the same as the inner product:</span>
+x(1)*y(1) + x(2)*y(2) + x(3)*y(3) + x(4)*y(4) + x(5)*y(5)
+sum(x.*y)
+
+<span class="comment">% inner product of perpendicular vectors is 0</span>
+[2 2] * [-5 5]'
+</pre><pre class="codeoutput">
+inner_product =
+
+   205
+
+
+ans =
+
+   205
+
+
+ans =
+
+   205
+
+
+ans =
+
+     0
+
+</pre><h2>Outer product<a name="19"></a></h2><p>The outer product (Cartesian product) expands two vectors into a matrix of their elementwise products</p><pre class="codeinput">outer_product = x' * y
+</pre><pre class="codeoutput">
+outer_product =
+
+    11    12    13    14    15
+    22    24    26    28    30
+    33    36    39    42    45
+    44    48    52    56    60
+    55    60    65    70    75
+
+</pre><h2>Element-wise operations<a name="20"></a></h2><p>.* operator ("Dot-times")</p><pre class="codeinput">x.*y
+
+<span class="comment">% ./ operator</span>
+y./x
+</pre><pre class="codeoutput">
+ans =
+
+    11    24    39    56    75
+
+
+ans =
+
+   11.0000    6.0000    4.3333    3.5000    3.0000
+
+</pre><h2>Summary statistics<a name="21"></a></h2><p>min, max, mean, std</p><pre class="codeinput"><span class="comment">% Vectors:</span>
+sum(x);
+min(x);
+max(x);
+mean(x);
+std(x);
+
+<span class="comment">% Matrices:</span>
+sum(mat) <span class="comment">% Sum over rows. How do we sum over columns? Ask "help sum"</span>
+sum(mat,2) <span class="comment">% Sum over the second dimension</span>
+
+<span class="comment">% How to get the sum of ALL the values in the matrix?  There are several ways of</span>
+<span class="comment">% coding this</span>
+sum(mat(1:end))
+sum(mat(:));
+sum(sum(mat));
+
+<span class="comment">% Average of our matrix</span>
+<span class="comment">% average(mat) % hm, this function doesn't exist? Let's look at the help:</span>
+which <span class="string">average</span>; <span class="comment">% not found! interesting</span>
+lookfor <span class="string">average</span>; <span class="comment">% search the help docs for the word "average"</span>
+<span class="comment">% oh, we wanted "mean", right.</span>
+
+mean(mat)
+mean(mat, 1)
+mean(mat, 2)
+</pre><pre class="codeoutput">
+ans =
+
+    12    15    18
+
+
+ans =
+
+     6
+    15
+    24
+
+
+ans =
+
+    45
+
+'average' not found.
+vis_averagefailure             - Generate bar plot of model failure (predicted minus
+mean                           - Average or mean value.
+mean2                          - Average or mean of matrix elements.
+ewmaplot                       - Exponentially weighted moving average chart.
+
+ans =
+
+     4     5     6
+
+
+ans =
+
+     4     5     6
+
+
+ans =
+
+     2
+     5
+     8
+
+</pre><h2>Plotting<a name="22"></a></h2><pre class="codeinput"><span class="comment">% You can't just "plot a function" directly: first you have to define a</span>
+<span class="comment">% discrete set of x values, then compute the corresponding y values, then</span>
+<span class="comment">% plot the x points against the y points</span>
+
+<span class="comment">% Let's define 10 points, and plot the "sin" function at those points:</span>
+x=[0:1:10];
+y=sin(x);
+plot(x,y)
+plot(x,y,<span class="string">'o'</span>)
+plot(x,y,<span class="string">'o-'</span>)
+<span class="comment">% (The above "plot" commands will overwrite each other in the figure window,</span>
+<span class="comment">% so run each one separately if you want to see their separate output.)</span>
+
+<span class="comment">% That image is too choppy. Let's try using more x values.</span>
+x = [0:(2*pi/100):(2*pi)]; <span class="comment">% (Remind yourself how the colon notation works here)</span>
+y = sin(x);
+plot(x,y,<span class="string">'o-'</span>);
+
+<span class="comment">% That was actually 101 points. What if we want 100 points?</span>
+x = [0:(2*pi/99):(2*pi)]; <span class="comment">% way 1 - this is unreadable, don't do this</span>
+x = linspace(0,2*pi,100); <span class="comment">% way 2 - this is readable!</span>
+</pre><img vspace="5" hspace="5" src="lab1_matlab1_01.png" alt=""> <h2>Plotting multiple lines on the same axis<a name="23"></a></h2><pre class="codeinput">y = sin(x);
+z = cos(x);
+plot(x,y,x,z);
+
+<span class="comment">% Plot without specifying your x values, it assumes 1:n</span>
+plot(y);
+
+<span class="comment">% Treat x like a parametric variable</span>
+plot(y,z); axis <span class="string">equal</span>
+</pre><img vspace="5" hspace="5" src="lab1_matlab1_02.png" alt=""> <h2>More visualizations: histograms and scatterplots<a name="24"></a></h2><pre class="codeinput">plot(rand(1,100))
+hist(rand(1,100))
+hist(rand(1,1000))
+hist(rand(1,1000000))
+
+plot(rand(1,1000), rand(1,1000), <span class="string">'o'</span>)
+title(<span class="string">'uniform'</span>)
+
+plot(randn(1,100))
+hist(randn(1,100))
+hist(randn(1,1000))
+hist(randn(1,10000))
+hist(randn(1,100000),-4:0.1:4)
+
+plot(randn(1,1000), randn(1,1000), <span class="string">'o'</span>)
+title(<span class="string">'gaussian'</span>)
+</pre><img vspace="5" hspace="5" src="lab1_matlab1_03.png" alt=""> <h2>Scripts<a name="25"></a></h2><p>A script is a file that ends in ".m" which contains MATLAB code that's meant to be run all together.</p><p>Why write a script? 1) Save your work! 2) Run whole blocks of code at a time without typing it out at the prompt</p><p>(TA will create a script now and show how it works in a workspace) The TA's script will demonstrate more plotting features: ylim, xlim axis( [0,3] , [0,3] ) xlabel, ylabel title hold on</p><p>Ways to use a script:</p><p>1. Use the green "RUN" button to run it all. This works just like typing   it all at the prompt</p><p>2. Use ctrl-enter or apple-enter to run just one subsection at a time   (subsections are separated by a double-percent "%%" at the start of the section)</p><p>3. Highlight a piece of the code and hit F9 to run just that portion</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Lab 1 overview:
+% * What's MATLAB? Why MATLAB?
+% * Interface
+% * Variables
+% * Matrices and vectors: creation and access
+% * Built-in functions
+% * Operating on matrices and vectors
+% * Plotting
+% * Saving your work as a script
+
+%% What's MATLAB? Why MATLAB?
+%
+% MATLAB is a programming language and an environment.
+%
+% Why code in general? You can write your own analyses.
+%
+% Why use code in this course? So you can try out the math. Visualize it.
+% Make it concrete. It's another learning tool.
+%
+% Why MATLAB, not a different language?
+% * Common in the field
+% * Interpreted - see results immediately
+% * Data visualization
+%
+
+%% Introduction to Matlab - Interface
+% Let's familiarize ourselves with the MATLAB interface.
+% Work by typing these commands into the interpreter: the window with the
+% line starting with ">>". Type your commands after ">>" and hit enter.
+
+%% MATLAB as Calculator
+
+% Copy these lines to the prompt (">>" in the other window) and run them
+% one at a time:
+3+4
+5-9
+4*6
+5*(3+4)
+26/5
+5^2
+pi
+
+% You can use the "up" arrow at the prompt (">>") to go back to previous
+% commands you typed.
+%
+% If you start typing and then use the up arrow before you're done, it will
+% find you all past commands that start with the letters you just typed.
+
+%% Variables
+% We can assign values to variables with =
+a = 7;
+a
+% Now, the value of our variable "a" won't change...
+a + 1;
+a + 1;
+a
+% ... unless we re-assign a value to it
+a = 41;
+a
+
+% Can we assign a variable to another variable? What happens?
+b = a;
+b
+
+c = a + 1;
+c
+
+% If b = a, then what happens when we change a?
+a = 10;
+b
+c
+
+% The way this works is that MATLAB has a lookup table. When you type
+% something, like "a", it looks in the lookup table for the associated
+% value. When you type "a = 1", it puts "1" in the lookup table as the
+% value for "a".
+
+% We don't have to be boring and use single letters as variable names. In
+% general, it's a VERY good idea to use descriptive names for your
+% variables.
+darthVader = 7;
+han_solo = 4*4;
+R2D2 = (han_solo + darthVader)/2;
+
+% Note that we use underscores instead of spaces in variable names.
+% Also, we can't use a hyphen, because "han-solo" would be read as "han" minus
+% "solo"!
+
+% Another neat feature of the prompt: If you type part of a variable name and
+% then hit "tab", you can see possible completions. Try typing "darth" and
+% then hitting tab.
+
+%% Workspace
+% MATLAB uses a table to look up the variables. You can view this table in
+% the "workspace" in your matlab editor. This is useful to you for keeping
+% track of the variables you've assigned. You can view the contents with
+% "who" ("whos" is similar and gives you more information)
+
+who
+
+% You can use a semicolon to suppress output.
+% The command you run still causes changes in the workspace,
+% so your variable is different next time you look at it
+
+a = 5;
+a
+
+% You can also cause output to be shown with the "display" command:
+display('a');
+
+%% Matrix and vector creation: basics
+% How to enter the matrix
+a = [1 2 3] % This is a row
+a = [1, 2, 3] % This is also a row, the commas are optional
+a = [1; 2; 3] % This is a column: the semicolons make a new row
+a = [1 2; 3 4; 5 6] % This is two columns, three rows
+
+% How do I enter a whole range of numbers?
+a = [1:10] % 1 through 10, counting by 1, as a row
+a = [1:2:10] % Start at 1, count up by twos, don't go past 10
+a = [10:-1:4] % Start at 10, go down by 1, don't go past 4
+
+a = [1:3; 4:6; 7:9] % Make three rows of three each
+
+% Transpose operator flips rows and columns
+a = [1:10]'
+
+%% EXERCISE
+% Try creating different arrangements of the numbers 1 through 6.
+% Can you create a row vector? A column vector? The row 1 2 3 above the row
+% 4 5 6? The column 1 3 5 beside the column 2 4 6?
+
+%% Vector access
+% Let's create a vector.
+% A note on names: we don't have to call our variables only "a" all the time.
+% Using descriptive names will help you later. For now, we'll call our
+% variable "vec" so we remember that it's a vector.
+vec = [101:112];
+
+% Access elements in a vector using parentheses
+vec(2) % This gives us the second element of the vector
+vec(4)
+
+% Access multiple elements at once
+% Instead of just one number in the parentheses, we can put a range of numbers.
+vec(3:6); % This gives us elements 3, 4, 5, and 6.
+
+% "end" is a special keyword for accessing the last element.
+vec(end) 
+vec(1:end)
+
+% The colon operator alone puts everything into one column. We'll see more
+% of it later to understand why it's useful.
+vec(:)
+
+%% Matrix access
+% Let's create a matrix to play with, and call it "mat".
+mat = [1:3; 4:6; 7:9];
+
+% We can use *two* subscripts to access elements of our matrix by
+% specifying the row and the column. (Row first, then column).
+mat(2,1)
+mat(3,3)
+
+% As before, each subscript can be a single number or a range of numbers
+mat(2, 1:3)
+mat(1:3, 2)
+mat(2:end, 1);
+
+% As before, the colon operator selects "everything": all rows and/or all columns
+mat(3,:)
+mat(:,:)
+
+%% EXERCISE
+% Below is a matrix called "b".
+% Write four expressions: one each to select just all the 0's, all the
+% 1's, all the 2's, or all the 3's.
+b = [2 2 2; 3 1 1; 3 1 1; 0 1 1];
+
+%% Errors in matrix creation and access
+% Sometimes there will be an error! Thats OK! That's totally normal!
+
+% Examples of failed vector access:
+test = [1 2 3];
+
+% test(4) % "Index exceeds matrix dimensions" because we tried to take the
+%   fourth element of a 1x3 vector, and 4 exceeds 3.
+
+% test(0) % "Subscript indices must either be real positive integers or
+%   logicals." We get this error because 0 is not a positive integer. Unlike
+%   in other programming languages, there is no "zeroth" element. The first
+%   element is indexed with 1.
+
+% test(-1) % "Index exceeds matrix dimensions" again. I have no idea why
+%   MATLAB doesn't first warn you that -1 isn't positive.
+
+% Examples of failed matrix creation
+
+% test = [1:3; 4:8]; % "Error using vertcat. Dimensions of matrices
+%    being concatenated are not consistent." The problem is that we are
+%    trying to put [1, 2, 3] in the top row and [4, 5, 6, 7, 8] in the
+%    bottom row, but the rows are not the same size so there is no way
+%    to "vertically concatenate" (vertcat) row 1 onto row 2.
+
+%% Functions
+
+% Functions are calculations that have names. For example in math notation
+% "y = f(x)", f is the name of the function. x is the input. y is the output.
+
+% Some functions perform mathematical operations:
+abs(-2);
+sin(pi/2);
+round(2.7);
+ceil(2.7);
+floor(2.7);
+
+% Some functions compute other properties of their inputs:
+size(vec)
+size(mat)
+size(4) % notice while we're here that scalars are stored in matlab as 1x1 matrices
+
+%% Getting help
+% MATLAB contains extensive documentation, which you can access using the
+% "help" command to view it in the command window, or the "doc" command to
+% pull up a pretty window.
+help size
+doc size
+
+which vec
+which abs
+
+%% An important aside about notation
+% Watch out, there are two totally identical-looking parenthesis notations
+% And they're totally different!
+vec(3) % 1) accessing a vector/matrix element
+abs(3) % 2) calling a function
+
+% MATLAB will let you override built-in functions. Avoid this!
+abs = [10, 11, 12];
+abs(3)
+
+which abs % Abs is now a variable??
+% Yep,'abs' is in the list of variables! MATLAB looks there first
+% In fact *every time* you type something, MATLAB has to look it up
+
+% To remove a variable from the lookup table, use "clear":
+clear abs
+which abs
+
+%% Matrix/vector creation: using functions
+a = zeros(2, 3) % Create a matrix of all zeros, with 2 rows and 3 columns
+a = ones(3) % Oops, this might seem like like "three ones", but it's actually 3x3!
+a = ones(3,1) % We need to explicitly say "3 rows, 1 column"
+a = ones(1,3) % or "1 row, 3 columns"
+
+a = eye(3) % Identity matrix
+
+a = rand(3, 3) % Uniform distribution
+a = randn(3, 3) % Normal distribution
+a = randi(10, 3, 3) % Integers up to 10
+
+diag(a) % Extract the elements along the diagonal
+triu(a) % Keep just the upper triangle, zero out the lower triangled(
+
+%% Concatenating matrices
+% Larger matrices can be built out of smaller matrices by concatenating
+% them together. When concatenating matrices, their sizes have to line up.
+
+c = [1:4]; % 1x4: 1 row and 4 columns
+d = [11:14]; % another 1x4 matrix
+
+% Horizontal concatenation:
+% To stack beside each other, use a comma (like making a row vector!)
+[c, d]
+
+% Vertical concatenation:
+% To stack on top of each other, use a semicolon (like making a column vector!)
+[c; d]
+
+% Concatenation requires sizes to match:
+e = [101:104; 105:108]; % 2x4
+
+% [d, e] % These won't stack beside each other because they have different numbers of rows
+[d; e] % But one row stacks on top of two rows just fine!
+
+%% Vector math
+% Let's try some simple vector math: +, -, / (abs, floor, sin, sort)
+
+% Set up variables to play with:
+a = 4;
+x = [1:5];
+y = [11:15];
+z = rand(1,7);
+
+% Vector multiplied by a scalar
+a*x
+% Vector addition and subtraction (elementwise)
+x + y
+x - y
+
+% Note that x + z fails, due to wrong sizes
+
+%% Inner product
+% inner_product = x * y
+% why didn't the above work?
+% we can look in the workspace window, or use size to figure out our variable sizes
+inner_product = x * y'
+
+% The inner product (dot product) sums the products of the elements.
+% Both of the following are the same as the inner product:
+x(1)*y(1) + x(2)*y(2) + x(3)*y(3) + x(4)*y(4) + x(5)*y(5)
+sum(x.*y)
+
+% inner product of perpendicular vectors is 0
+[2 2] * [-5 5]'
+
+%% Outer product
+% The outer product (Cartesian product) expands two vectors into a matrix
+% of their elementwise products
+outer_product = x' * y
+
+%% Element-wise operations
+% .* operator ("Dot-times")
+x.*y
+
+% ./ operator
+y./x
+
+
+%% Summary statistics
+% min, max, mean, std
+
+% Vectors:
+sum(x);
+min(x);
+max(x);
+mean(x);
+std(x);
+
+% Matrices:
+sum(mat) % Sum over rows. How do we sum over columns? Ask "help sum"
+sum(mat,2) % Sum over the second dimension
+
+% How to get the sum of ALL the values in the matrix?  There are several ways of
+% coding this
+sum(mat(1:end))
+sum(mat(:));
+sum(sum(mat));
+
+% Average of our matrix
+% average(mat) % hm, this function doesn't exist? Let's look at the help:
+which average; % not found! interesting
+lookfor average; % search the help docs for the word "average"
+% oh, we wanted "mean", right.
+
+mean(mat)
+mean(mat, 1)
+mean(mat, 2)
+
+%% Plotting
+ 
+% You can't just "plot a function" directly: first you have to define a
+% discrete set of x values, then compute the corresponding y values, then
+% plot the x points against the y points
+
+% Let's define 10 points, and plot the "sin" function at those points:
+x=[0:1:10];
+y=sin(x); 
+plot(x,y) 
+plot(x,y,'o')
+plot(x,y,'o-')
+% (The above "plot" commands will overwrite each other in the figure window,
+% so run each one separately if you want to see their separate output.)
+
+% That image is too choppy. Let's try using more x values.
+x = [0:(2*pi/100):(2*pi)]; % (Remind yourself how the colon notation works here)
+y = sin(x);
+plot(x,y,'o-');
+
+% That was actually 101 points. What if we want 100 points?
+x = [0:(2*pi/99):(2*pi)]; % way 1 - this is unreadable, don't do this
+x = linspace(0,2*pi,100); % way 2 - this is readable!
+
+%% Plotting multiple lines on the same axis
+y = sin(x);
+z = cos(x);
+plot(x,y,x,z); 
+
+% Plot without specifying your x values, it assumes 1:n
+plot(y);
+
+% Treat x like a parametric variable
+plot(y,z); axis equal
+
+%% More visualizations: histograms and scatterplots
+plot(rand(1,100))
+hist(rand(1,100))
+hist(rand(1,1000))
+hist(rand(1,1000000))
+  
+plot(rand(1,1000), rand(1,1000), 'o')
+title('uniform')
+
+plot(randn(1,100))
+hist(randn(1,100))
+hist(randn(1,1000))
+hist(randn(1,10000))
+hist(randn(1,100000),-4:0.1:4)
+  
+plot(randn(1,1000), randn(1,1000), 'o')
+title('gaussian')
+
+
+%% Scripts
+% A script is a file that ends in ".m" which contains MATLAB code that's
+% meant to be run all together.
+% 
+% Why write a script? 1) Save your work! 2) Run whole blocks of code at a time without typing it out at the prompt
+%
+% (TA will create a script now and show how it works in a workspace)
+% The TA's script will demonstrate more plotting features:
+% ylim, xlim
+% axis( [0,3] , [0,3] )
+% xlabel, ylabel
+% title
+% hold on
+%
+% Ways to use a script:
+%
+% 1. Use the green "RUN" button to run it all. This works just like typing
+%   it all at the prompt
+%
+% 2. Use ctrl-enter or apple-enter to run just one subsection at a time
+%   (subsections are separated by a double-percent "%%" at the start of the section)
+% 
+% 3. Highlight a piece of the code and hit F9 to run just that portion
+
+
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,739 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab 2 overview:</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-09-11"><meta name="DC.source" content="lab2_matlab2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Lab 2 overview:</h1><!--introduction--><div><ul><li>Conditional statements: if, else</li><li>Loops: for, while</li><li>Avoiding loops by vectorizing</li><li>Avoiding conditionals with logical indexing</li><li>Functions: how to write your own function</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Conditional statements: if, else, end</a></li><li><a href="#2">What sorts of conditions might we want to check?</a></li><li><a href="#3">Check multiple conditions with "elseif"</a></li><li><a href="#4">Brainstorm: When might we want to use a conditional in code?</a></li><li><a href="#5">Repeating code without copy-and-paste</a></li><li><a href="#6">When vectorizing isn't what we want</a></li><li><a href="#7">For loops</a></li><li><a href="#8">Using a for loop to solve the "make several plots" problem above</a></li><li><a href="#9">Style note: good variable names; "magic numbers"; whitespace</a></li><li><a href="#10">You can use the "index variable" just to count</a></li><li><a href="#11">Note on index variable naming</a></li><li><a href="#12">While loops</a></li><li><a href="#13">Avoid loops by vectorizing</a></li><li><a href="#14">Use element-wise operators to avoid looping through a vector</a></li><li><a href="#15">Use "repmat" to make copies of a vector to help work with matrices</a></li><li><a href="#16">Vectorizing your conditionals</a></li><li><a href="#17">Logical indexing</a></li><li><a href="#18">When <b>should</b> I use a for loop?</a></li><li><a href="#19">Vectorization practice: compute the dot product</a></li><li><a href="#20">More vectorization practice: simulate an experiment</a></li><li><a href="#21">Practice continued: a multi-trial experiment</a></li><li><a href="#22">Practice continued: find the trials where the error was really bad</a></li></ul></div><h2>Conditional statements: if, else, end<a name="1"></a></h2><p>So far we only know how to run one statement after another. All statements in our scripts get run every the time. What if we want some statements to only run under certain <b>conditions</b>? Answer: use a conditional!</p><p>The following shows a demo of how "if/else" (conditional) syntax works. The condition will be checked. If it's true, the first block of code will be run. If it's false, the second block of code will be run. Under no circumstances will both blocks be run.</p><pre class="codeinput">x = 1; <span class="comment">% Try changing this value and running the block</span>
+<span class="keyword">if</span> x &gt; 5
+    display(<span class="string">'a is greater than 5'</span>);
+<span class="keyword">else</span>
+    display(<span class="string">'a is less than or equal to 5'</span>);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">a is less than or equal to 5
+</pre><h2>What sorts of conditions might we want to check?<a name="2"></a></h2><pre class="codeinput">x = 10;
+
+x &gt; 0 <span class="comment">% is x positive?</span>
+x == 2 <span class="comment">% is x equal to 2?</span>
+mod(x, 2) == 0 <span class="comment">% is x divisible by 2? ("mod" is like "remainder")</span>
+
+<span class="comment">% These statements output 0 if false, or 1 if true</span>
+</pre><pre class="codeoutput">
+ans =
+
+     1
+
+
+ans =
+
+     0
+
+
+ans =
+
+     1
+
+</pre><h2>Check multiple conditions with "elseif"<a name="3"></a></h2><p>Each condition will be checked one after another.</p><p>As soon as one condition is found to be true, the other conditions will not be checked, even if they are also true. Under no circumstances will more than one block of code be run.</p><pre class="codeinput">x = 1;
+<span class="keyword">if</span> x &gt; 5
+    display(<span class="string">'a is greater than 5'</span>);
+<span class="keyword">elseif</span> x &gt; 0
+    display(<span class="string">'a is less than or equal to 5, and greater than 0'</span>);
+<span class="keyword">else</span>
+    display(<span class="string">'a is less than or equal to 0'</span>);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">a is less than or equal to 5, and greater than 0
+</pre><h2>Brainstorm: When might we want to use a conditional in code?<a name="4"></a></h2><div><ul><li>Running an experiment?</li><li>If the key the user pressed was "Esc", then exit</li><li>Check the time since stimulus onset; if it is &gt;500ms, change the stimulus</li><li>Analyzing data?</li><li>User data: analyze the correct responses separately from the incorrect responses</li><li>fMRI data: look at only voxels that are in V1</li><li>Spike data: if a spike occurs, grab the previous 100ms of stimulus</li><li>Visualizations: Set "graphsOn = true", later check "if graphsOn" to   show or hide figures</li><li>Checking for code correctness?</li><li>Load a data file; check it's the right size before you start   analyzing</li></ul></div><h2>Repeating code without copy-and-paste<a name="5"></a></h2><p>Let's say we want to visualize several vectors:</p><pre class="codeinput">nVec = 3;
+vecLength = 10;
+
+vecs = rand(vecLength, nVec);
+<span class="comment">% Quick check: are these vectors row vectors or column vectors?</span>
+<span class="comment">% Notice how the use of descriptive names makes it easier to tell than if we</span>
+<span class="comment">% had instead written rand(10, 3).</span>
+
+<span class="comment">% Display the vectors:</span>
+figure; stem(vecs(:, 1));
+figure; stem(vecs(:, 2));
+figure; stem(vecs(:, 3));
+<span class="comment">% This is inefficient. What if we had 10 vectors? 100? What if we change</span>
+<span class="comment">% "nVec" above?</span>
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_01.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_02.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_03.png" alt=""> <h2>When vectorizing isn't what we want<a name="6"></a></h2><p>If you look at the help for "stem" you can see that it will happily make one plot with a new series for each column in a matrix, but what if we really do want separate plots, above, not one big plot?</p><pre class="codeinput">stem(vecs); <span class="comment">% This is nice, but it isn't what we want</span>
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_04.png" alt=""> <h2>For loops<a name="7"></a></h2><p>Use a "for loop" to step through different values of a variable. In this example, we step through x = 1, x = 2, ... x = 5. Each time we go through the loop, we run the same block of code with the new x value.</p><pre class="codeinput"><span class="keyword">for</span> x = 1:5
+    display(x)
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+x =
+
+     1
+
+
+x =
+
+     2
+
+
+x =
+
+     3
+
+
+x =
+
+     4
+
+
+x =
+
+     5
+
+</pre><h2>Using a for loop to solve the "make several plots" problem above<a name="8"></a></h2><pre class="codeinput">close <span class="string">all</span>;
+
+<span class="comment">% Generate vectors</span>
+nVec = 3;
+vecLength = 10;
+vecs = rand(vecLength, nVec);
+
+<span class="comment">% Plot vectors</span>
+<span class="keyword">for</span> col = 1:nVec
+    figure; stem(vecs(:, col));
+<span class="keyword">end</span>
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_05.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_06.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_07.png" alt=""> <h2>Style note: good variable names; "magic numbers"; whitespace<a name="9"></a></h2><div><ul><li>Compare and contrast the code above with the code below</li><li>Descriptive variable names like "vecLength" are better than just   writing "10" because you know <b>why</b> 10 is the right number there.</li><li>The term for an inexplicable number hard-coded into your code is a   "magic number". Avoid magic numbers! Give all your numbers names!</li><li>Using variables also means you only have to make changes in one   place, rather than finding all the places to make changes.</li><li>Indentation and line breaks help understand the structure of code</li><li>Comments help explain the purpose and organization of code blocks</li></ul></div><pre class="codeinput">close <span class="string">all</span>;
+a = rand(10, 3);
+<span class="keyword">for</span> b = 1:3
+figure; stem(a(:, b));
+<span class="keyword">end</span>
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_08.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_09.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_10.png" alt=""> <h2>You can use the "index variable" just to count<a name="10"></a></h2><p>Here the variable "i" is used just to count n times through the loop, and we're changing a different variable "b" as we go along</p><pre class="codeinput">b = 0;
+n = 5;
+<span class="keyword">for</span> i = 1:n
+    b = b + 2;
+    display(b);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+b =
+
+     2
+
+
+b =
+
+     4
+
+
+b =
+
+     6
+
+
+b =
+
+     8
+
+
+b =
+
+    10
+
+</pre><h2>Note on index variable naming<a name="11"></a></h2><p>It's common in most programming languages to use "i" as the index variable when you're using it just to count. However, in MATLAB this overwrites the imaginary number. I still choose to use "i" in my loops, and to use "sqrt(-1)" when I need the imaginary number. You may have a different preference.</p><h2>While loops<a name="12"></a></h2><p>A "while" loop is similar to a for loop, but it stops after a condition gets met, rather than after a set number of loops. This is useful if you don't know how many loops you'll need. For example, if you're running an iterative algorithm and waiting for it to converge; generating random samples until you find one you like; waiting for the user to input the right value; etc.</p><pre class="codeinput"><span class="comment">% Count down from 100 in random intervals, stop when we hit or pass 0:</span>
+
+x = 100;
+numIter = 0;
+<span class="keyword">while</span> x &gt; 0
+    x = x - randi(10);
+    numIter = numIter + 1;
+<span class="keyword">end</span>
+display([<span class="string">'Stopped after '</span>, num2str(numIter), <span class="string">' iterations'</span>]);
+</pre><pre class="codeoutput">Stopped after 21 iterations
+</pre><h2>Avoid loops by vectorizing<a name="13"></a></h2><p>In the "stem" example above, we really did have to use a loop to call the "figure" command multiple times. But "for" loops are slow in MATLAB. If your goal is to operate on multiple elements of a vector, or multiple rows/columns of a matrix, you can almost always avoid using a for loop by "vectorizing" the operation: that is to say, by operating on all the elements of the vector at once, or all the rows/columns of the matrix at once. This can take some thinking!</p><p>As a rule, if you're writing a for loop, ask yourself: am I operating on multiple numbers/vectors/matrices one after another? Can I rewrite this to do all the operations at once?</p><h2>Use element-wise operators to avoid looping through a vector<a name="14"></a></h2><p>Example: find the square of each element in a vector</p><pre class="codeinput"><span class="comment">% For loop:</span>
+vec = rand(1, 10);
+squares_go_here = zeros(1, size(vec, 2)); <span class="comment">% an empty vector to be filled in</span>
+<span class="keyword">for</span> i = 1:size(vec, 2)
+    squares_go_here(i) = sqrt(vec(i));
+<span class="keyword">end</span>
+
+<span class="comment">% Vectorized:</span>
+squares_vec = sqrt(vec);
+</pre><h2>Use "repmat" to make copies of a vector to help work with matrices<a name="15"></a></h2><pre class="codeinput">vec = [1:3]'
+mat = [1:4; 5:8; 9:12]
+
+<span class="comment">% How do we divide every column in the matrix by this one column vector?</span>
+
+denom = repmat(vec, 1, size(mat, 2))
+quotient = mat ./ denom
+
+<span class="comment">% "Repmat" will make concatenated copies of a matrix. We asked for just one</span>
+<span class="comment">% copy in the first/row dimension (don't repeat the rows), and multiple</span>
+<span class="comment">% copies in the second/column dimension (repeat this column over and over).</span>
+</pre><pre class="codeoutput">
+vec =
+
+     1
+     2
+     3
+
+
+mat =
+
+     1     2     3     4
+     5     6     7     8
+     9    10    11    12
+
+
+denom =
+
+     1     1     1     1
+     2     2     2     2
+     3     3     3     3
+
+
+quotient =
+
+    1.0000    2.0000    3.0000    4.0000
+    2.5000    3.0000    3.5000    4.0000
+    3.0000    3.3333    3.6667    4.0000
+
+</pre><h2>Vectorizing your conditionals<a name="16"></a></h2><p>What if you want to operate on <b>only</b> every fifth element of the vector? Or only the even numbers in your vector? Don't you have to loop through the vector and check the conditional every time?</p><p>No! You can vectorize your conditionals!</p><pre class="codeinput">n = 12; mx = 10;
+x = randi(mx, 1, n);
+
+display(<span class="string">'Is each element in x greater than 5?'</span>);
+[x; x &gt; 5]
+
+display(<span class="string">'Any?'</span>)
+any(x &gt; 5)
+
+display(<span class="string">'All?'</span>)
+all(x &gt; 5)
+
+display(<span class="string">'Which indices?'</span>)
+idx = find(x &gt; 5)
+
+display(<span class="string">'Get the elements at those indices'</span>);
+x(idx)
+</pre><pre class="codeoutput">Is each element in x greater than 5?
+
+ans =
+
+     4     4     5     2     8     5     5    10     1     7     2     2
+     0     0     0     0     1     0     0     1     0     1     0     0
+
+Any?
+
+ans =
+
+     1
+
+All?
+
+ans =
+
+     0
+
+Which indices?
+
+idx =
+
+     5     8    10
+
+Get the elements at those indices
+
+ans =
+
+     8    10     7
+
+</pre><h2>Logical indexing<a name="17"></a></h2><p>When we write "x(find(x&gt;5))", we are saying "Give us a vector of 1's and 0's as long as x which tells us where the elements we want are; find the indices of the 1's; then get the elements of x at those positions." Using <b>logical indexing</b>, we can skip the "find" step, and just exract the elements at "1" and leave behind the elements at "0". MATLAB actually understands a matrix 1's and 0's as a list of "take this one, leave that one" if the matrix is the same size as the matrix to index into. Like this:</p><pre class="codeinput">x
+
+display(<span class="string">'Get the elements of x that are greater than 5'</span>)
+x(x&gt;5)
+
+display(<span class="string">'Get only the even-indexed elements'</span>);
+x(mod(1:length(x), 2)==0)
+</pre><pre class="codeoutput">
+x =
+
+     4     4     5     2     8     5     5    10     1     7     2     2
+
+Get the elements of x that are greater than 5
+
+ans =
+
+     8    10     7
+
+Get only the even-indexed elements
+
+ans =
+
+     4     2     5    10     7     2
+
+</pre><h2>When <b>should</b> I use a for loop?<a name="18"></a></h2><div><ul><li>When your function or operation is not vectorized, or you don't want   to invoke its vectorized behavior (e.g. creating multiple separate figures)</li><li>When accumlating experimental data in real-time, trial-by-trial   (user keypresses; recorded spikes; etc.)</li><li>When you can't figure out how to write it without the loop, and it is   a better use of your time to just write something "good enough for now"   than to get stuck trying to write "perfect code". Seriously! Don't get   so focused on correctness that you feel paralyzed.</li><li>When vectorizing requires an unreadable combination of "repmat" and   "reshape" and "bsxfun", and readability is more important than speed.</li></ul></div><h2>Vectorization practice: compute the dot product<a name="19"></a></h2><pre class="codeinput">n = 10;
+x = rand(1,n);
+y = rand(1,n);
+
+<span class="comment">% For loop:</span>
+d_product_for = 0;
+<span class="keyword">for</span> i = 1:n
+	 d_product_for = d_product_for + x(i)*y(i);
+<span class="keyword">end</span>
+
+<span class="comment">% Vectorized:</span>
+zip = x .* y;
+d_product_vec = sum(zip);
+
+d_product_vec = sum(x.*y); <span class="comment">% Same thing, just as a single statement</span>
+
+<span class="comment">% Using the "dot" function:</span>
+d_product_dot = dot(x, y);
+
+<span class="comment">% Using matrix multiplication:</span>
+d_product_mult = x * y';
+
+<span class="comment">% Verify that these dot products all came out to the same number!</span>
+</pre><h2>More vectorization practice: simulate an experiment<a name="20"></a></h2><p>Assume there is a true underlying relationship between the indepedent variable x and the dependent variable y, where y = sqrt(x). Let's simulate taking noisy measurements of the ground truth, and use vectorization to quickly and easily compute the squared error of each mesaurement.</p><pre class="codeinput"><span class="comment">% Create ground truth y values</span>
+x = [1:10]';
+groundTruth = sqrt(x);
+
+<span class="comment">% Simulate one set of noisy measurements of the ground truth</span>
+noiseStd = 0.1;
+measured = groundTruth + noiseStd*randn(length(x), 1);
+
+<span class="comment">% Plot the simulated data we created</span>
+figure; plot(x, groundTruth, <span class="string">'bo-'</span>, x, measured, <span class="string">'ro'</span>); title(<span class="string">'Simulated experiment'</span>);
+legend(<span class="string">'Ground truth'</span>, <span class="string">'Noisy measurements (simulated)'</span>);
+
+<span class="comment">% How do we find the squared error term at each point without a for loop?</span>
+squaredErrors = (measured-groundTruth).^2;
+figure; plot(squaredErrors, <span class="string">'ro'</span>); title(<span class="string">'Squared error terms for simulated experiment'</span>);
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_11.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_12.png" alt=""> <h2>Practice continued: a multi-trial experiment<a name="21"></a></h2><p>(Use "repmat" to vectorize a matrix operation)</p><pre class="codeinput">close <span class="string">all</span>;
+
+nTrials = 5;
+
+noise = noiseStd*randn(length(x), nTrials);
+measured = repmat(groundTruth, 1, nTrials) + noise;
+
+<span class="comment">% Plot the simulated data we created</span>
+figure; plot(x, groundTruth, <span class="string">'bo-'</span>, x, measured', <span class="string">'ro'</span>); title(<span class="string">'Simulated experiment'</span>);
+legend(<span class="string">'Ground truth'</span>, <span class="string">'Noisy measurements (simulated)'</span>, <span class="string">'Location'</span>, <span class="string">'Best'</span>);
+
+<span class="comment">% Compute squared error term for each trial</span>
+errors = measured - repmat(groundTruth, 1, nTrials);
+squaredErrors = errors.^2;
+figure; plot(squaredErrors, <span class="string">'ro'</span>); title(<span class="string">'Squared error terms for simulated experiment'</span>);
+</pre><img vspace="5" hspace="5" src="lab2_matlab2_13.png" alt=""> <img vspace="5" hspace="5" src="lab2_matlab2_14.png" alt=""> <h2>Practice continued: find the trials where the error was really bad<a name="22"></a></h2><p>(Use vectorized conditionals and logical indexing!)</p><pre class="codeinput">badTrials = errors &gt; 1.5*std(errors(:))
+worstSquaredErrors = squaredErrors(badTrials)
+</pre><pre class="codeoutput">
+badTrials =
+
+     1     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     1     0
+     0     0     0     0     0
+     0     1     0     0     0
+     0     0     0     0     0
+     0     1     0     0     0
+
+
+worstSquaredErrors =
+
+    0.0577
+    0.0219
+    0.0231
+    0.0265
+
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Lab 2 overview:
+% * Conditional statements: if, else
+% * Loops: for, while
+% * Avoiding loops by vectorizing
+% * Avoiding conditionals with logical indexing
+% * Functions: how to write your own function
+
+%% Conditional statements: if, else, end
+% So far we only know how to run one statement after another. All
+% statements in our scripts get run every the time. What if we want some
+% statements to only run under certain *conditions*?
+% Answer: use a conditional!
+%
+% The following shows a demo of how "if/else" (conditional) syntax works.
+% The condition will be checked. If it's true, the first block of
+% code will be run. If it's false, the second block of code will be run.
+% Under no circumstances will both blocks be run.
+
+x = 1; % Try changing this value and running the block
+if x > 5
+    display('a is greater than 5');
+else
+    display('a is less than or equal to 5');
+end
+
+%% What sorts of conditions might we want to check?
+
+x = 10;
+
+x > 0 % is x positive?
+x == 2 % is x equal to 2? 
+mod(x, 2) == 0 % is x divisible by 2? ("mod" is like "remainder")
+
+% These statements output 0 if false, or 1 if true
+
+%% Check multiple conditions with "elseif"
+%
+% Each condition will be checked one after another.
+%
+% As soon as one condition is found to be true, the other conditions will
+% not be checked, even if they are also true. Under no circumstances will
+% more than one block of code be run.
+
+x = 1;
+if x > 5
+    display('a is greater than 5');
+elseif x > 0
+    display('a is less than or equal to 5, and greater than 0');
+else
+    display('a is less than or equal to 0');
+end
+
+%% Brainstorm: When might we want to use a conditional in code?
+% * Running an experiment?
+% * If the key the user pressed was "Esc", then exit
+% * Check the time since stimulus onset; if it is >500ms, change the stimulus
+% * Analyzing data?
+% * User data: analyze the correct responses separately from the incorrect responses
+% * fMRI data: look at only voxels that are in V1
+% * Spike data: if a spike occurs, grab the previous 100ms of stimulus
+% * Visualizations: Set "graphsOn = true", later check "if graphsOn" to
+%   show or hide figures
+% * Checking for code correctness?
+% * Load a data file; check it's the right size before you start
+%   analyzing
+
+%% Repeating code without copy-and-paste
+% Let's say we want to visualize several vectors:
+nVec = 3;
+vecLength = 10;
+
+vecs = rand(vecLength, nVec);
+% Quick check: are these vectors row vectors or column vectors?
+% Notice how the use of descriptive names makes it easier to tell than if we
+% had instead written rand(10, 3).
+
+% Display the vectors:
+figure; stem(vecs(:, 1));
+figure; stem(vecs(:, 2));
+figure; stem(vecs(:, 3));
+% This is inefficient. What if we had 10 vectors? 100? What if we change
+% "nVec" above?
+
+%% When vectorizing isn't what we want
+% If you look at the help for "stem" you can see that it will happily
+% make one plot with a new series for each column in a matrix, but what if
+% we really do want separate plots, above, not one big plot?
+
+stem(vecs); % This is nice, but it isn't what we want
+
+%% For loops
+% Use a "for loop" to step through different values of a variable.
+% In this example, we step through x = 1, x = 2, ... x = 5.
+% Each time we go through the loop, we run the same block of code with the
+% new x value.
+
+for x = 1:5 
+    display(x)
+end
+
+%% Using a for loop to solve the "make several plots" problem above
+close all;
+
+% Generate vectors
+nVec = 3;
+vecLength = 10;
+vecs = rand(vecLength, nVec);
+
+% Plot vectors
+for col = 1:nVec
+    figure; stem(vecs(:, col));
+end
+
+%% Style note: good variable names; "magic numbers"; whitespace
+% * Compare and contrast the code above with the code below
+% * Descriptive variable names like "vecLength" are better than just
+%   writing "10" because you know *why* 10 is the right number there.
+% * The term for an inexplicable number hard-coded into your code is a
+%   "magic number". Avoid magic numbers! Give all your numbers names!
+% * Using variables also means you only have to make changes in one
+%   place, rather than finding all the places to make changes.
+% * Indentation and line breaks help understand the structure of code
+% * Comments help explain the purpose and organization of code blocks
+
+close all;
+a = rand(10, 3);
+for b = 1:3
+figure; stem(a(:, b));
+end
+
+%% You can use the "index variable" just to count
+% Here the variable "i" is used just to count n times through the loop, and
+% we're changing a different variable "b" as we go along
+
+b = 0;
+n = 5;
+for i = 1:n
+    b = b + 2;
+    display(b);
+end
+
+%% Note on index variable naming
+% It's common in most programming languages to use "i" as the index
+% variable when you're using it just to count. However, in MATLAB this
+% overwrites the imaginary number. I still choose to use "i" in my loops,
+% and to use "sqrt(-1)" when I need the imaginary number. You may have a
+% different preference.
+
+%% While loops
+% A "while" loop is similar to a for loop, but it stops after a condition
+% gets met, rather than after a set number of loops. This is useful if you don't
+% know how many loops you'll need. For example, if you're running an iterative
+% algorithm and waiting for it to converge; generating random samples until
+% you find one you like; waiting for the user to input the right value; etc.
+
+% Count down from 100 in random intervals, stop when we hit or pass 0:
+
+x = 100;
+numIter = 0;
+while x > 0
+    x = x - randi(10);
+    numIter = numIter + 1;
+end
+display(['Stopped after ', num2str(numIter), ' iterations']);
+
+
+%% Avoid loops by vectorizing
+% In the "stem" example above, we really did have to use a loop to call the
+% "figure" command multiple times. But "for" loops are slow in MATLAB. If
+% your goal is to operate on multiple elements of a vector, or multiple
+% rows/columns of a matrix, you can almost always avoid using a for loop by
+% "vectorizing" the operation: that is to say, by operating on all the
+% elements of the vector at once, or all the rows/columns of the matrix at
+% once. This can take some thinking!
+%
+% As a rule, if you're writing a for loop, ask yourself: am I operating on
+% multiple numbers/vectors/matrices one after another? Can I rewrite this to
+% do all the operations at once?
+
+%% Use element-wise operators to avoid looping through a vector
+% Example: find the square of each element in a vector
+
+% For loop:
+vec = rand(1, 10);
+squares_go_here = zeros(1, size(vec, 2)); % an empty vector to be filled in
+for i = 1:size(vec, 2)
+    squares_go_here(i) = sqrt(vec(i));
+end
+
+% Vectorized:
+squares_vec = sqrt(vec);
+
+%% Use "repmat" to make copies of a vector to help work with matrices
+vec = [1:3]'
+mat = [1:4; 5:8; 9:12]
+
+% How do we divide every column in the matrix by this one column vector?
+
+denom = repmat(vec, 1, size(mat, 2))
+quotient = mat ./ denom
+
+% "Repmat" will make concatenated copies of a matrix. We asked for just one
+% copy in the first/row dimension (don't repeat the rows), and multiple
+% copies in the second/column dimension (repeat this column over and over).
+
+%% Vectorizing your conditionals
+% What if you want to operate on *only* every fifth element of the vector?
+% Or only the even numbers in your vector? Don't you have to loop through
+% the vector and check the conditional every time?
+%
+% No! You can vectorize your conditionals!
+
+n = 12; mx = 10;
+x = randi(mx, 1, n);
+
+display('Is each element in x greater than 5?');
+[x; x > 5]
+
+display('Any?')
+any(x > 5)
+
+display('All?')
+all(x > 5)
+
+display('Which indices?')
+idx = find(x > 5)
+
+display('Get the elements at those indices');
+x(idx)
+
+
+%% Logical indexing
+% When we write "x(find(x>5))", we are saying "Give us a vector of 1's and
+% 0's as long as x which tells us where the elements we want are; find the
+% indices of the 1's; then get the elements of x at those positions." Using
+% *logical indexing*, we can skip the "find" step, and just exract the
+% elements at "1" and leave behind the elements at "0". MATLAB actually
+% understands a matrix 1's and 0's as a list of "take this one, leave that one"
+% if the matrix is the same size as the matrix to index into. Like this:
+
+x
+
+display('Get the elements of x that are greater than 5')
+x(x>5)
+
+display('Get only the even-indexed elements');
+x(mod(1:length(x), 2)==0)
+
+%% When *should* I use a for loop?
+% * When your function or operation is not vectorized, or you don't want
+%   to invoke its vectorized behavior (e.g. creating multiple separate figures)
+% * When accumlating experimental data in real-time, trial-by-trial
+%   (user keypresses; recorded spikes; etc.)
+% * When you can't figure out how to write it without the loop, and it is
+%   a better use of your time to just write something "good enough for now"
+%   than to get stuck trying to write "perfect code". Seriously! Don't get
+%   so focused on correctness that you feel paralyzed.
+% * When vectorizing requires an unreadable combination of "repmat" and
+%   "reshape" and "bsxfun", and readability is more important than speed.
+
+%% Vectorization practice: compute the dot product
+
+n = 10;
+x = rand(1,n);
+y = rand(1,n);
+
+% For loop:
+d_product_for = 0;
+for i = 1:n
+	 d_product_for = d_product_for + x(i)*y(i);
+end
+
+% Vectorized:
+zip = x .* y;
+d_product_vec = sum(zip);
+
+d_product_vec = sum(x.*y); % Same thing, just as a single statement
+
+% Using the "dot" function:
+d_product_dot = dot(x, y);
+
+% Using matrix multiplication:
+d_product_mult = x * y';
+
+% Verify that these dot products all came out to the same number!
+
+%% More vectorization practice: simulate an experiment
+% Assume there is a true underlying relationship between the indepedent
+% variable x and the dependent variable y, where y = sqrt(x). Let's simulate
+% taking noisy measurements of the ground truth, and use vectorization to
+% quickly and easily compute the squared error of each mesaurement.
+
+% Create ground truth y values
+x = [1:10]';
+groundTruth = sqrt(x); 
+
+% Simulate one set of noisy measurements of the ground truth
+noiseStd = 0.1;
+measured = groundTruth + noiseStd*randn(length(x), 1);
+
+% Plot the simulated data we created
+figure; plot(x, groundTruth, 'bo-', x, measured, 'ro'); title('Simulated experiment');
+legend('Ground truth', 'Noisy measurements (simulated)');
+
+% How do we find the squared error term at each point without a for loop?
+squaredErrors = (measured-groundTruth).^2;
+figure; plot(squaredErrors, 'ro'); title('Squared error terms for simulated experiment');
+
+%% Practice continued: a multi-trial experiment
+% (Use "repmat" to vectorize a matrix operation)
+close all;
+
+nTrials = 5;
+
+noise = noiseStd*randn(length(x), nTrials);
+measured = repmat(groundTruth, 1, nTrials) + noise;
+
+% Plot the simulated data we created
+figure; plot(x, groundTruth, 'bo-', x, measured', 'ro'); title('Simulated experiment');
+legend('Ground truth', 'Noisy measurements (simulated)', 'Location', 'Best');
+
+% Compute squared error term for each trial
+errors = measured - repmat(groundTruth, 1, nTrials);
+squaredErrors = errors.^2;
+figure; plot(squaredErrors, 'ro'); title('Squared error terms for simulated experiment');
+
+%% Practice continued: find the trials where the error was really bad
+% (Use vectorized conditionals and logical indexing!)
+
+badTrials = errors > 1.5*std(errors(:))
+worstSquaredErrors = squaredErrors(badTrials)
+
+
+##### SOURCE END #####
+--></body></html>
