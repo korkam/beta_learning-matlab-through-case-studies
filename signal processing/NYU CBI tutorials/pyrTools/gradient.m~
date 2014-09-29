@@ -1,0 +1,15 @@
+% [dx, dy] = imGradient(im) 
+%
+% Compute the gradient of the image using smooth derivative filters
+% optimized for accurate direction estimation.
+
+% EPS, 1998.
+% Added to matlabPyrTools 10/2004.
+
+[dx, dy] = imGradient(im) 
+
+%% 1D smoothing and differentiation kernels.
+%% See Farid & Simoncelli, IEEE Trans Image Processing, 13(4):496-508, April 2004.
+
+gp = 
+gd = 

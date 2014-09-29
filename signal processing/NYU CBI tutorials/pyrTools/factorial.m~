@@ -1,0 +1,12 @@
+%% RES = factorial(NUM)
+
+function res = factorial(num)
+
+res = ones(size(num));
+
+ind = find(num > 0);
+if ( ~isempty(ind) )
+  subNum = num(ind);
+  res(ind) = subNum .* factorial(subNum-1);
+end
+
