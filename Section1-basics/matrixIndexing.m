@@ -103,122 +103,72 @@ find(B)
 
 
 %% Indexing Vectors
-Let's start with the simple case of a vector and a single subscript. The vector is:
+%Let's start with the simple case of a vector and a single subscript. The vector is:
 
   v = [16 5 9 4 2 11 7 14];
-The subscript can be a single value:
+%The subscript can be a single value:
 
   v(3)     % Extract the third element
-  ans =
-        9
-Or the subscript can itself be another vector:
+ 
+%Or the subscript can itself be another vector:
 
   v([1 5 6])      % Extract the first, fifth, and sixth elements
-  ans =
-        16   2   11
-The colon notation in MATLAB provides an easy way to extract a range of elements from v:
+ 
+%The colon notation in MATLAB provides an easy way to extract a range of elements from v:
 
   v(3:7)     % Extract the third through the seventh elements
-  ans =
-        9   4   2   11   7
-Swap the two halves of v to make a new vector:
+  
+%Swap the two halves of v to make a new vector:
 
   v2 = v([5:8 1:4])     % Extract and swap the halves of v
-  v2 =
-        2   11   7   14   16   5   9   4
-The special end operator is an easy shorthand way to refer to the last element of v:
+  
+%The special end operator is an easy shorthand way to refer to the last element of v:
 
   v(end)     % Extract the last element
-  ans =
-        14
-The end operator can be used in a range:
+  
+%The end operator can be used in a range:
 
   v(5:end)     % Extract the fifth through the last elements   
-  ans =
-        2   11   7   14
-You can even do arithmetic using end:
+  
+%You can even do arithmetic using end:
 
   v(2:end-1)     % Extract the second through the next-to-last elements
-  ans =
-        5   9   4   2   11   7
-Combine the colon operator and end to achieve a variety of effects, such as extracting every k-th element or flipping the entire vector:
+ 
+%Combine the colon operator and end to achieve a variety of effects, such as extracting every k-th element or flipping the entire vector:
 
   v(1:2:end)   % Extract all the odd elements
-  ans =
-      16   9   2   7
+
   v(end:-1:1)   % Reverse the order of elements
-  ans =
-      14   7   11   2   4   9   5   16
-By using an indexing expression on the left side of the equal sign, you can replace certain elements of the vector:
+  
+%By using an indexing expression on the left side of the equal sign, you can replace certain elements of the vector:
 
   v([2 3 4]) = [10 15 20]   % Replace some elements of v
-  v =
-      16   10   15   20   2   11   7   14
-Usually the number of elements on the right must be the same as the number of elements referred to by the indexing expression on the left. You can always, however, use a scalar on the right side:
+
+%Usually the number of elements on the right must be the same as the number of elements referred to by the indexing expression on the left. You can always, however, use a scalar on the right side:
 
   v([2 3]) = 30   % Replace second and third elements by 30
-  v =
-      16   30   30   20   2   11   7   14
-This form of indexed assignment is called scalar expansion.
 
-Indexing Matrices with Two Subscripts
-Now consider indexing into a matrix. We'll use a magic square for our experiments:
+%This form of indexed assignment is called scalar expansion.
+
+%% Indexing Matrices with Two Subscripts
+%Now consider indexing into a matrix. We'll use a magic square for our experiments:
 
   A = magic(4)
-  A =
-          16           2           3          13
-           5          11          10           8
-           9           7           6          12
-           4          14          15           1
-Most often, indexing in matrices is done using two subscripts?one for the rows and one for the columns. The simplest form just picks out a single element:
+
+  %Most often, indexing in matrices is done using two subscripts?one for the rows and one for the columns. The simplest form just picks out a single element:
 
   A(2,4)   % Extract the element in row 2, column 4
-  ans =
-           8
-More generally, one or both of the row and column subscripts can be vectors:
+
+%More generally, one or both of the row and column subscripts can be vectors:
 
   A(2:4,1:2)
-  ans =
-           5          11
-           9           7
-           4          14
-A single : in a subscript position is shorthand notation for 1:end and is often used to select entire rows or columns:
+ 
+%A single : in a subscript position is shorthand notation for 1:end and is often used to select entire rows or columns:
 
   A(3,:)   % Extract third row
-  ans =
-     9   7   6   12
+
   A(:,end)   % Extract last column
-  ans =
-          13
-           8
-          12
-           1
-There is often confusion over how to select scattered elements from a matrix. For example, suppose you want to extract the (2,1), (3,2), and (4,4) elements from A. The expression A([2 3 4], [1 2 4]) won't do what you want. This diagram illustrates how two-subscript indexing works:
-
-two_subscript_indexing.gif
-Extracting scattered elements from a matrix requires a different style of indexing, and that brings us to our next topic.
-
-Linear Indexing
-What does this expression A(14) do?
-
-When you index into the matrix A using only one subscript, MATLAB treats A as if its elements were strung out in a long column vector, by going down the columns consecutively, as in:
-
-          16
-           5
-           9
-         ...
-           8
-          12
-           1
-The expression A(14) simply extracts the 14th element of the implicit column vector. Indexing into a matrix with a single subscript in this way is often called linear indexing.
-
-Here are the elements of the matrix A along with their linear indices:
-
-matrix_with_linear_indices.gif
-The linear index of each element is shown in the upper left.
-
-From the diagram you can see that A(14) is the same as A(2,4).
-
+ 
 The single subscript can be a vector containing more than one linear index, as in:
 
   A([6 12 15])
@@ -293,3 +243,10 @@ Logical indexing is closely related to the find function. The expression A(A > 5
   A(nan_locations) = 0;
   A = filter2(ones(3,3), A);
   A(nan_locations) = NaN;
+  
+%% logical operations
+% http://www.matlabtips.com/logical-operations-and-logical-indexing-in-matlab/
+X = randi(10,1,10)
+find(X >= 1 & X <= 3) % indices
+Costs1to3=X(X >= 1 & X <= 3) % elements
+sort(Costs1to3)
