@@ -169,75 +169,33 @@ find(B)
 
   A(:,end)   % Extract last column
  
-The single subscript can be a vector containing more than one linear index, as in:
+%The single subscript can be a vector containing more than one linear index, as in:
 
   A([6 12 15])
-  ans =
-      11   15   12
-Consider again the problem of extracting just the (2,1), (3,2), and (4,4) elements of A. You can use linear indexing to extract those elements:
+  
+%Consider again the problem of extracting just the (2,1), (3,2), and (4,4) elements of A. You can use linear indexing to extract those elements:
 
   A([2 7 16])
-  ans =
-      5   7   1
-That's easy to see for this example, but how do you compute linear indices in general? MATLAB provides a function called sub2ind that converts from row and column subscripts to linear indices. You can use it to extract the desired elements this way:
-
-  idx = sub2ind(size(A), [2 3 4], [1 2 4])
-  ans =
-      2   7   16
-  A(idx)
-  ans =
-      5   7   1
-Advanced Examples Using Linear Indexing
-Example 1: Shifting the Rows of a Matrix
-A MATLAB user recently posed this question in the comp.soft-sys.matlab newsgroup: If I want to shift the rows of an m-by-n matrix A by k places, I use A(:,[n-k+1:n 1:n-k]). But what if k is a function of the row number? That is, what if k is a vector of length m? Is there a quick and easy way to do this?
-
-Regular newsgroup contributor Peter Acklam posted this solution that uses sub2ind and linear indexing:
-
-  % index vectors for rows and columns
-  p = 1:m;
-  q = 1:n;
-  % index matrices for rows and columns
-  [P, Q] = ndgrid(p, q);
-  % create a matrix with the shift values
-  K = repmat(k(:), [1 n]);
-  % update the matrix with the column indexes
-  Q = 1 + mod(Q+K, n);
-  % create matrix of linear indexes
-  ind = sub2ind([m n], P, Q);
-  % finally, create the output matrix
-  B = A(ind);
-Example 2: Setting Some Matrix Elements to Zero
-Another MATLAB user posted this question: I want to get the maximum of each row, which isn't really a problem, but afterwards I want to set all the other elements to zero. For example, this matrix:
-
-             1           2           3           4
-             5           5           6           5
-             7           9           8           3
-should become:
-
-             0           0           0           4
-             0           0           6           0
-             0           9           0           0
-Another regular newsgroup contributor, Brett Shoelson, provided this compact solution.
-
+  
+%% Example 2: Setting Some Matrix Elements to Zero
+%Another MATLAB user posted this question: I want to get the maximum of each row, which isn't really a problem, but afterwards I want to set all the other elements to zero. For example, this matrix:
   [Y,I] = max(A, [], 2);
   B = zeros(size(A));
-  B(sub2ind(size(A), 1:length(I), I')) = Y;
-Logical Indexing
-Another indexing variation, logical indexing, has proven to be both useful and expressive. In logical indexing, you use a single, logical array for the matrix subscript. MATLAB extracts the matrix elements corresponding to the nonzero values of the logical array. The output is always in the form of a column vector. For example, A(A > 12) extracts all the elements of A that are greater than 12.
+  B(sub2ind(size(A), 1:length(I), I')) = Y
+  
+%% Logical Indexing
+%Another indexing variation, logical indexing, has proven to be both useful and expressive. In logical indexing, you use a single, logical array for the matrix subscript. MATLAB extracts the matrix elements corresponding to the nonzero values of the logical array. The output is always in the form of a column vector. For example, A(A > 12) extracts all the elements of A that are greater than 12.
 
   A(A > 12)
-  ans =
-        16
-        14
-        15
-        13
-Many MATLAB functions that start with is return logical arrays and are very useful for logical indexing. For example, you could replace all the NaN elements in an array with another value by using a combination of isnan, logical indexing, and scalar expansion. To replace all NaN elements of the matrix B with zero, use
+
+%Many MATLAB functions that start with is return logical arrays and are very useful for logical indexing. For example, you could replace all the NaN elements in an array with another value by using a combination of isnan, logical indexing, and scalar expansion. To replace all NaN elements of the matrix B with zero, use
 
   B(isnan(B)) = 0
-Or you could replace all the spaces in a string matrix str with underscores.
-
+%Or you could replace all the spaces in a string matrix str with underscores.
+  str = '12 34 56 ';
   str(isspace(str)) = '_'
-Logical indexing is closely related to the find function. The expression A(A > 5) is equivalent to A(find(A > 5)). Which form you use is mostly a matter of style and your sense of the readability of your code, but it also depends on whether or not you need the actual index values for something else in the computation. For example, suppose you want to temporarily replace NaN values with zeros, perform some computation, and then put the NaN values back in their original locations. In this example, the computation is two-dimensional filtering using filter2. You do it like this:
+
+%Logical indexing is closely related to the find function. The expression A(A > 5) is equivalent to A(find(A > 5)). Which form you use is mostly a matter of style and your sense of the readability of your code, but it also depends on whether or not you need the actual index values for something else in the computation. For example, suppose you want to temporarily replace NaN values with zeros, perform some computation, and then put the NaN values back in their original locations. In this example, the computation is two-dimensional filtering using filter2. You do it like this:
 
   nan_locations = find(isnan(A));
   A(nan_locations) = 0;
@@ -250,3 +208,5 @@ X = randi(10,1,10)
 find(X >= 1 & X <= 3) % indices
 Costs1to3=X(X >= 1 & X <= 3) % elements
 sort(Costs1to3)
+
+%%
