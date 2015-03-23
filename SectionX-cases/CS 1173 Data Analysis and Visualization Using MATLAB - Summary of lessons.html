@@ -1,0 +1,1176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>CS 1173  Data Analysis and Visualization Using MATLAB - Summary of lessons</title>
+<meta name="keywords" content="MATLAB, data, visualization, course, topics"/>
+<meta name="description" content="Summary of materials for a course on using MATLAB to visualize data 
+offered at UT San Antonio"/>
+<link href="styles/basicStyles.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<h1>CS 1173 Data Analysis and Visualization Using MATLAB<br/>
+Lesson summary</h1>
+
+
+<h2>Recommended strategies:</h2>
+You should print each lesson (and its questions) and watch the corresponding videos before we cover the lesson in class. 
+You can make notes on the lesson printout while watching the videos. During class we will work on some of the
+exercises with the goal of helping you learn to solve problems and program independently.
+
+<p>&nbsp;</p>
+<h2>Videos:</h2>
+Please save the videos on your home machine for watching rather than downloading them each time you
+want to watch. We have limited server capacity and this will take a load off our systems. Thanks!
+
+<p>&nbsp;</p>
+<h2>Quizzes:</h2>
+The quizzes are short automatically graded assessments administered on Blackboard through the learning modules. You can retake these
+as often as you wish and the highest grade counts. To be effective in the class, you should do the learning modules before the lesson is covered in class.
+
+<p>&nbsp;</p>
+<h2>Sleep diary</h2>
+Starting Wednesday, January 14, 2015 you will record some information about your sleep patterns for 21 days (<a href="./homework/index.html#HW4">HW4</a>)
+You will use the data you gathered for laboratory 3 and laboratory 4. We will also consolidate and anonymize the data for all sections for various
+analyses during the second half of the class.
+
+<p>&nbsp;</p>
+<h2>Alternative links to the videos</h2>
+We have put several alternative links to the videos if you have trouble accessing them through the Learning Modules. 
+<strong>The most efficient way to access the videos is to right click on the UTSA-mp4 link and save the .mp4 locally to your machine.</strong> Then
+you can play it anytime without needing network access. We recommend this. We have also staged them on a server at UTSA with a player (the UTSA link) and
+as a google drive file (the Google-Drive link).
+
+<p>&nbsp;</p>
+<h2>Why data analysis?</h2>
+<blockquote>
+<strong>Is data making the scientific method obsolete?</strong>:<br/>
+In the TEDMED talk <a href="http://www.youtube.com/watch?v=dtNMA46YgX4">http://www.youtube.com/watch?v=dtNMA46YgX4</a> (14:06 min) <br/>
+Atul Butte addresses this question and talks about the profound changes that data is making in medical research.<br/>
+(See also the longer NIH lecture <a href="http://www.youtube.com/watch?v=o4KNG7nd938">http://www.youtube.com/watch?v=o4KNG7nd938</a> entitled 
+Translational Bioinformatics: Transforming 300 Billion Points of Data)
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<strong>The big-data revolution in health care</strong>:<br/>
+In the TED talk <a href="http://www.youtube.com/watch?v=Mb8x6vLcggc">http://www.youtube.com/watch?v=Mb8x6vLcggc</a> (16:18 min)<br/>
+Joel Selanikio, founder of Magpi, talks about how a simple marriage of technology and data can profoundly change healthcare in developing countries.
+</blockquote> 
+ 
+
+<p>&nbsp;</p>
+<h2>Topics:</h2>
+<table class="LessonList" border="1" cellpadding="3">
+<thead>
+<tr><td><strong>Lesson</strong></td> <td><strong>Title and links</strong></td>
+<td><strong>Analysis/visualization concepts</strong></td><td><strong>MATLAB/computing concepts</strong></td>
+<td><strong>Mathematics/statistics concepts</strong></td>
+<td><strong>Labs/projects</strong></td></tr>
+</thead>
+<tbody>
+
+<tr>
+<td><strong>1</strong></td>
+<td>Getting started in MATLAB<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWS3YtVEN4clk1UDQ/GettingStartedLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/GettingStartedLesson.pdf">pdf</a>) &nbsp;  &nbsp; 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWMlhTTEhoRmd2VFU/GettingStartedQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/GettingStartedQuestions.pdf">pdf</a>)<br/>
+<p></p>
+<strong>FOCUS QUESTION: How do I start using MATLAB?</strong>
+<p></p><strong>Supporting videos:</strong>
+<blockquote>
+Running an analysis (3:17 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/RunningAnalysis.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/RunningAnalysis/RunningAnalysis.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/RunningAnalysis/RunningAnalysis.mp4">UTSA-mp4</a>
+
+<br/>
+
+Labeling a graph (1:40 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LabelingGraph.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LabelingGraph/LabelingGraph.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LabelingGraph/LabelingGraph.mp4">UTSA-mp4</a>
+
+<br/>
+
+Using cells (3:22 mins)<br/> 
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/UsingCells.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/UsingCells/UsingCells.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/UsingCells/UsingCells.mp4">UTSA-mp4</a>
+
+<br/>
+
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173Percentages.pdf">Percentages</a><br/>
+</blockquote>
+</td>
+<td>
+<ul>
+<li>Arrays as tables with rows and columns</li>
+<li>Plotting the columns of an array against the integers from 1:n</li>
+<li>Requirements for a well-designed plot</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>MATLAB environment and windows 
+     (Command, History, Workspace, Editor)</li>
+<li>Changing the current directory </li>
+<li>Loading data </li>
+<li>Creating and running MATLAB scripts </li>
+<li>Using MATLAB cell mode</li>
+<li>The <tt>plot</tt> command</li>
+<li>The <tt>xlabel</tt>, <tt>ylabel</tt>, <tt>title</tt>, and <tt>legend</tt> commands</li>
+</ul>
+</td>
+<td><ul>
+<li>Defining variables</li>
+<li>Representing complex structures (such as arrays) symbolically
+and working with them in equations.</li>
+</ul>
+</td>
+<td><strong>Pretest (HW1) </br> 
+<a href="../resources/CS1173SleepDiaryLogSheet.pdf">Sleep diary</a> </strong><br/>
+<a href="./resources/CS1173HandCalculationWorksheetHW2.pdf">HW2</a></td>
+</tr>
+
+<tr>
+<td><strong>2</strong></td>
+<td>Working with line graphs<br/>
+<a href="./lessons/LineGraphsLesson/LineGraphsLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LineGraphsLesson.pdf">pdf</a>) &nbsp;  &nbsp; 
+<a href="./lessons/LineGraphsQuestions/LineGraphsQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LineGraphsQuestions.pdf">pdf</a>)<br/>
+<p></p>
+<strong>FOCUS QUESTION: How do I display trends in data?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+MATLAB workspace (3:17 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/MatlabWorkspace.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MatlabWorkspace/MatlabWorkspace.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MatlabWorkspace/MatlabWorkspace.mp4">UTSA-mp4</a>
+<br/>
+
+Setting up a project (4:47 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/MATLABSetupProject.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MATLABSetupProject/MATLABSetupProject.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MATLABSetupProject/MATLABSetupProject.mp4">UTSA-mp4</a>
+
+<br/>
+
+Working with arrays and variables (6:22 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/ArraysAndVariables.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ArraysAndVariables/ArraysAndVariables.html">UTSA</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ArraysAndVariables/ArraysAndVariables.mp4">UTSA-mp4</a>
+
+<br/>
+Line graphs in MATLAB (8:34 mins)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LineGraphsInMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LineGraphsInMATLAB/LineGraphsInMATLAB.html">UTSA</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LineGraphsInMATLAB/LineGraphsInMATLAB.mp4">UTSA-mp4</a>
+
+</blockquote>
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/ArrayBasicsMatlab.pdf">Array basics</a><br/>
+</blockquote>
+
+</td>
+<td>
+<ul>
+<li>Different ways to use line graphs</li>
+<li>Setting explicit x-axis values using x-y plots </li>
+<li>Using markers and colors to distinguish plots</li> 
+<li>Rescaling to make graphs more readable</li> 
+</ul>
+</td>
+<td>
+<ul>
+<li>Using colons to pick out rows and columns</li>
+<li>Using element-wise division (<tt>./</tt>)</li>
+<li>Using <tt>hold on</tt> and <tt>hold off</tt> to display multiple graphs
+on the same axis.</li>
+</ul>
+</td>
+<td><ul>
+<li>Performing arithmetic operations such as addition and
+multiplication on arrays</li>
+<li>Using indexing to manipulate arrays</li>
+<li>Concept of array dimension</li>
+<li>Row and column operations</li>
+<li>Writing an equation to calculate a quantity described in words</li>
+</ul>
+</td>
+
+<td><br/>
+<a href="./labs/laboratory1flu.html">Lab 1</a></td>
+
+</tr>
+
+<tr>
+<td><strong>3</strong></td>
+<td>Introducing the sum function<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWNzBzQmNWdzRRU2M/SumFunctionLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/SumFunctionLesson.pdf">pdf</a>) &nbsp;  &nbsp; 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWY0VIcE0wbkVZRnM/SumFunctionQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/SumFunctionQuestions.pdf">pdf</a>)<br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I transform the data to give more meaningful results?</strong>
+<p></p><strong>Supporting videos:</strong>
+<blockquote>
+The MATLAB sum function (4:28 min):<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/MATLABSumFunction.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MATLABSumFunction/MATLABSumFunction.html">UTSA</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MATLABSumFunction/MATLABSumFunction.mp4">UTSA-mp4</a> &nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWV2phenpEa2NkTjA/edit?usp=sharing">Transcript</a>
+<br/>
+
+
+MATLAB linear representation of arrays (1:30 min):<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LinearRepresentation.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearRepresentation/LinearRepresentation.html">UTSA</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearRepresentation/LinearRepresentation.mp4">UTSA-mp4</a> &nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWZEZyRkl1WlA0dDg/edit?usp=sharing">Transcript</a>
+
+<br/>
+
+Transposing an array (2:55 min):<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/UsingTransposeMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/UsingTransposeMATLAB/UsingTransposeMATLAB.html">UTSA</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/UsingTransposeMATLAB/UsingTransposeMATLAB.mp4">UTSA-mp4</a> &nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWRUdpc1dtTTZLN2M/edit?usp=sharing">Transpose</a>
+<br/>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173SumFunction.pdf">MATLAB sum function</a><br/>
+</blockquote>
+
+
+</td>
+<td>
+<ul>
+<li>Plotting summary information rather than individual data points</li>
+<li>Using the sum function to summarize the dataset</li> 
+<li>Plotting pie charts</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Using colons to specify ranges and increments</li>
+<li>Using the linear representation (<tt>:</tt>) of an array for reordering</li>
+<li>The <tt>sum</tt> function for adding up rows or columns</li>
+<li>The transpose operator (<tt>'</tt>) for flipping an array</li>
+<li>The <tt>pie</tt> command </li>
+</ul>
+</td>
+<td><ul>
+<li>Combining and scaling arrays and vectors</li>
+<li>Array transpose</li>
+<li>Working with ranges and subintervals</li>
+<li>Applying functions that map a 2D array to a vector (mapping from one vector
+space to another)</li>
+<li>Function composition</li>
+<li>Word problems requiring multiple function transformations.</li>
+</ul>
+</td>
+<td>
+
+<a href="./resources/CS1173HandCalculationWorksheetHW3.pdf">HW3</a>
+</td>
+
+
+</tr>
+
+
+<tr>
+<td><strong>4</strong></td>
+<td>Bar charts<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWN2t6WmtQaXFWSzA/BarChartLesson.html"><strong>Lesson</strong></a>   
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/BarChartLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWMlNYajQzdlc5TlE/BarChartQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/BarChartQuestions.pdf">pdf</a>) &nbsp;  &nbsp; <br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I show proportions and relative sizes of different data groups?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+Bar chart basics in MATLAB (3:41 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/BarChartBasicsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BarChartBasicsMATLAB/BarChartBasicsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BarChartBasicsMATLAB/BarChartBasicsMATLAB.mp4">UTSA-mp4</a>&nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWeGRrNVYwakl1QWM/edit?usp=sharing">Transcript</a>
+<br/>
+Grouped and stacked bar charts MATLAB (3:02 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/BarChartGroupsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BarChartGroupsMATLAB/BarChartGroupsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BarChartGroupsMATLAB/BarChartGroupsMATLAB.mp4">UTSA-mp4</a>&nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWNTc1M3RmM2dwdDA/edit?usp=sharing">Transcript</a>
+
+</blockquote>
+
+</td>
+<td>
+<ul>
+<li> Bar charts for displaying both proportion and magnitude</li>
+<li> Grouped or stacked bar charts for comparing multiple data sets</li>
+<li> Scaling a data set to make the axes more understandable</li>
+</ul>
+</td>
+<td>
+<ul>
+<li> Additional practice with the <tt>sum</tt> function</li>
+<li>Using square brackets and commas to assemble an array</li>
+<li> Additional examples of use of transpose and array assembly</li>
+<li> The <tt>bar</tt> function for creating
+vertical and horizontal bar charts</li>
+<li> The <tt>stack</tt> option of the <tt>bar</tt> function</li>
+</ul></td>
+<td><ul>
+<li>Additional array manipulations</li>
+</ul>
+</td>
+
+<td>
+
+</td>
+
+
+</tr>
+
+<tr>
+<td><strong>5</strong></td>
+<td> Basic stats<br/> 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWNnNxZjFBR3gzSmM/BasicStatsLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/BasicStatsLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWXg2d1BTLWwwNFU/BasicStatsQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/BasicStatsQuestions.pdf">pdf</a>)<br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I find typical characteristics and central tendencies of data?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+Comparing mean and median (3:44 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/MeanAndMedian.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MeanAndMedian/MeanAndMedian.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MeanAndMedian/MeanAndMedian.mp4">UTSA-mp4</a>&nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWNVctV29RcHl5T2s/edit?usp=sharing">Transcript</a>
+
+<br/>
+Basic statistics in MATLAB (3:30 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/BasicStatsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BasicStatsMATLAB/BasicStatsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/BasicStatsMATLAB/BasicStatsMATLAB.mp4">UTSA-mp4</a>&nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWTVoxMjZ6alFFQkU/edit?usp=sharing">Transcript</a>
+
+<br/>
+Array statistics in MATLAB (2:06 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/ArrayStatsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ArrayStatsMATLAB/ArrayStatsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ArrayStatsMATLAB/ArrayStatsMATLAB.mp4">UTSA-mp4</a>&nbsp; &nbsp;
+<a href="https://drive.google.com/file/d/0B-W_U9RpVYKWdlI3YTlxdEVkZFE/edit?usp=sharing">Transcript</a>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173StatisticalIndicators.pdf">Statistical indicators</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173MaxFunction.pdf">MATLAB max function</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173MeanFunction.pdf">MATLAB mean function</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173MedianFunction.pdf">MATLAB median function</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173MinFunction.pdf">MATLAB min function</a><br/>
+</blockquote>
+
+
+</td>
+<td>
+<ul>
+<li>Statistical indicators: mean, median, maximum and minimum</li>
+<li>Outputing information about a data set</li>
+</ul></td>
+<td>
+<ul>
+<li>The <tt>mean</tt>, <tt>median</tt>, <tt>max</tt>, and <tt>min</tt> functions
+for expressing basic statistical characteristics</li>
+<li>The <tt>fprintf</tt> functions for outputting data</li>
+</ul></td>
+<td><ul>
+<li>Working with basic statistical indicators such as mean and median.</li>
+</ul>
+</td>
+
+<td>
+<a href="./labs/laboratory2circadian.html">Lab 2</a><br/>
+
+</td>
+
+</tr>
+
+<tr>
+<td><strong>6</strong></td>
+<td>Error bars<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWSG5qbDNTeUN4ZHc/ErrorBarLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/ErrorBarLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWV0JSeHMwVzA2ejg/ErrorBarQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/ErrorBarQuestions.pdf">pdf</a>)<br/>
+<p></p>
+
+<strong>FOCUS QUESTION: How can I depict uncertainty and variability in data?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+
+<blockquote>
+Measures of spread (Standard deviation, AAD, MAD, etc) (8:50 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/MeasuresOfSpread.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MeasuresOfSpread/MeasuresOfSpread.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/MeasuresOfSpread/MeasuresOfSpread.mp4">UTSA-mp4</a>
+
+<br/>
+Basic errorbars in MATLAB (4:14 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/ErrorBarsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsMATLAB/ErrorBarsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsMATLAB/ErrorBarsMATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+Alternative forms of errorbars in MATLAB (2:02 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/ErrorBarsAltMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsAltMATLAB/ErrorBarsAltMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsAltMATLAB/ErrorBarsAltMATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+Errorbars with unequal wings in MATLAB (3:50 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/ErrorBarsMedianMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsMedianMATLAB/ErrorBarsMedianMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/ErrorBarsMedianMATLAB/ErrorBarsMedianMATLAB.mp4">UTSA-mp4</a>
+
+</blockquote>
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173StdFunction.pdf">MATLAB standard deviation function (std)</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173ReshapeFunction.pdf">MATLAB reshape function</a><br/>
+</blockquote>
+
+</td>
+<td><ul>
+<li>Using error bars to depict spread</li>
+<li>Using error bars on bar charts</li>
+<li>Comparisons of different measures of spread for a highly skewed data set</li>
+</ul></td>
+<td><ul>
+<li>The <tt>errorbar</tt> function and its variations</li>
+<li>Creating SD, MAD and IQR error bars</li>
+<li>Using offsets to avoid overplotting.</li>
+<li>Using <tt>gca</tt> to get and set axis properties</li>
+</ul></td>
+
+<td><ul>
+<li> Interpretation of measures of spread (AAD MAD, SD, and IQR) 
+as measures of error in using the mean to predict data.</li>
+<li>Computing estimates of spread including AAD, MAD, SD,  and IQR</li>
+</ul>
+</td>
+
+<td>
+</td>
+
+</tr>
+
+
+<tr>
+<td><strong>7</strong></td>
+<td>Linear models, Scatter plots, curve fitting and correlation<br/>  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWaWJ4OU9qM3J0c2s/LinearModelLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LinearModelLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWM3R1RVBYaEhVMGs/LinearModelQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LinearModelQuestions.pdf">pdf</a>)<br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I determine whether two variables are related?</strong>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="./resources/CS1173ScatterPlotWithBestfit.pdf">Example of putting a best fit line on graph in a script</a><br/>
+</blockquote>
+
+
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+Straight lines are handy tools (4:40 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/StraightLinesAreHandyTools.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/StraightLinesAreHandyTools/StraightLinesAreHandyTools.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/StraightLinesAreHandyTools/StraightLinesAreHandyTools.mp4">UTSA-mp4</a>
+
+<br/>
+Linear models (6:45 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LinearModels.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearModels/LinearModels.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearModels/LinearModels.mp4">UTSA-mp4</a>
+
+<br/>
+Correlation in MATLAB (1:30 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/CorrelationMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/CorrelationMATLAB/CorrelationMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/CorrelationMATLAB/CorrelationMATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+Scatter plots and linear fits in MATLAB (5:40 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LinearFitsMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearFitsMATLAB/LinearFitsMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/LinearFitsMATLAB/LinearFitsMATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+Summary of modeling in MATLAB(:51 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/LinearModelsMatlabOverview.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew//LinearModelsMatlabOverview//LinearModelsMatlabOverview.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew//LinearModelsMatlabOverview//LinearModelsMatlabOverview.mp4">UTSA-mp4</a>
+
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+</blockquote>
+</td>
+<td>
+<ul>
+<li>Computing the correlation between two data sets</li>
+ <li>Comparing two data sets 
+	by plotting them against each other in a scatter plot</li>
+<li>Computing the best fit line</li>
+<li>Evaluating the RMS (root mean squared)  error between predictions and actual data</li>
+</ul></td>
+<td><ul>
+<li>Adding a linear fit line to a scatter plot using the MATLAB plottools</li>
+				<li>Constructing strings for plot annotation</li>
+				<li>Using <tt>xlabel</tt>, <tt>ylabel</tt>, and <tt>title</tt> 
+				to directly annotate a plot</li>
+	<li>The <tt>corr</tt> function for computing correlations</li>
+				<li>The <tt>polyfit</tt> function for fitting a polynomial to data</li>
+	<li>The <tt>polyval</tt> function for evaluating a polynomial at an array of points</li>
+</ul></td>
+<td><ul>
+<li>How is correlation computed?</li>
+<li>Correlation does not imply causality</li>
+</ul>
+</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td colspan="6"><strong>Midterm examination</strong></td>
+</tr>
+
+<tr>
+<td><strong>8</strong></td>
+<td>Combining plots<br/> 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWUC01Q0ZWeE1kZ3c/PlotComboLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/PlotComboLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWdmJjUzRZZ3FPd28/PlotComboQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/PlotComboQuestions.pdf">pdf</a>)<br/>
+
+<p></p>
+<strong>FOCUS QUESTION: How can I combine graphs to make effective comparisons?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+<!--<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">If you can calculate it, you can compute it...()</a>
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">Creating functions --- an act of generalization ()</a> -->
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinationsWithQuiz/Lesson8PlotCombinations.mp4">Lesson 8: Plot combinations(13:50 min)</a><br/>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173SubplotFunction.pdf">MATLAB subplot function</a><br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWeXRNc0wya0Y3Qmc/CS1173ReshapeFunction.pdf">MATLAB reshape function</a><br/>
+</blockquote>
+
+</td>
+<td>
+<ul>
+<li> Different strategies for combining plots (insets, subplots and double axis)</li>
+<li> Displaying multiple graphs of different sizes to focus attention</li>
+<li> Overlaying graphs using different scales to compare trends</li>
+</ul>
+</td>
+<td>
+<ul>
+<li> Using the plot-browser to edit and select plots in MATLAB</li>
+<li> The <tt>subplot</tt> function for tiling axes</li>
+<li> Creating an inset plot using the insert axis feature</li>
+<li> The <tt>plotyy</tt> function for creating a plot with two vertical axes</li>
+<li> Using axis and plot handles to modify graph properties</li></ul></td>
+
+<td><ul>
+<li>Arrays of axes</li>
+</ul>
+</td>
+<td>href="./resources/CS1173HW5HWP4SleepPatternWorksheet.pdf">HW5</a> </td>
+</tr>
+
+<tr>
+<td><strong>9</strong></td>
+<td>Histograms<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWVWp3eFFMTS1VM0k/HistogramLesson.html"><strong>Lesson</strong></a>   
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/HistogramLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWMDAwWExFVGRGNFU/HistogramQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/HistogramQuestions.pdf">pdf</a>) &nbsp;  &nbsp; <br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I show proportions and relative sizes of different data groups?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+Histogram definition (1:57 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramDefinition.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramDefinition/HistogramDefinition.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramDefinition/HistogramDefinition.mp4">UTSA-mp4</a>
+
+<br/>
+Histograms with continuous data (2:11 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramContinuousData.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramContinuousData/HistogramContinuousData.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramContinuousData/HistogramContinuousData.mp4">UTSA-mp4</a>
+
+<br/>
+Picking the number of histogram bins (3:21 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramBins.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramBins/HistogramBins.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramBins/HistogramBins.mp4">UTSA-mp4</a>
+
+<br/>
+Reading a histogram (1:50 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramReading.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramReading/HistogramReading.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramReading/HistogramReading.mp4">UTSA-mp4</a>
+
+<br/>
+Histogram features (1:16 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramFeatures.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramFeatures/HistogramFeatures.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramFeatures/HistogramFeatures.mp4">UTSA-mp4</a>
+
+
+<br/>
+Percentages versus counts (3:23 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramPercentages.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramPercentages/HistogramPercentages.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramPercentages/HistogramPercentages.mp4">UTSA-mp4</a>
+
+
+<br/>
+Comparing histograms (3:23 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HistogramComparison.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramComparison/HistogramComparison.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HistogramComparison/HistogramComparison.mp4">UTSA-mp4</a>
+</blockquote>
+
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="lessonTemplates/Lesson9.zip">Lesson 9 template (download and unzip)</a>
+</blockquote>
+</td>
+<td><ul>
+<li>Using histograms to convey distribution characteristics</li>
+	<li>Comparing the characteristics of common distributions (normal, uniform and exponential)</li>
+	<li>Scaling histograms to show the fraction of values rather than the number of values</li>
+</ul>
+	</td>
+<td>
+<ul>
+<li>The <tt>hist</tt> function for computing frequency tables</li>
+<li>The <tt>stairs</tt> function for displaying a stair plot</li>
+<li>Setting the number of bins and bin positions for a histogram</li>
+<li>The <tt>random</tt> function for generating pseudo-random values from
+a specified distribution</li></ul></td>
+<td><ul>
+<li>Concept of distribution</li>
+	<li>First look at commonly used distributions: normal, uniform, and 
+	exponential</li>
+</ul>
+</td>
+<td> </td>
+</tr>
+
+<tr>
+<td><strong>10</strong></td>
+<td>Vector logic for specializing plots<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWZXdxU29HcnFpdEE/VectorLogicLesson.html"><strong>Lesson</strong></a>   
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/VectorLogicLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWaUIwQ3Z6cWRrMTA/VectorLogicQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/VectorLogicQuestions.pdf">pdf</a>) &nbsp;  &nbsp; <br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I extract the rows and columns of an array based on data characteristics?</strong><br/>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/LogicalArraysAndIndexingWithQuiz/LogicalArraysAndIndexing.mp4">Logical arrays and indexing (7:52 min)</a><br/>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="lessonTemplates/Lesson10.zip">Lesson 10 template (download and unzip)</a><br>
+<a href="lessonTemplates/Lesson10Script.m">Lesson 10 script only (download)</a><br>
+Note: the data for this lesson can be found on Blackboard in the Addl Information section.
+</blockquote>
+
+</td>
+<td>
+<ul>
+<li>Using logical operators to pick out subsets of the data</li>
+<li>Using relational operators to compare data and set ranges</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Using logical operators <tt>&amp;</tt> (and), <tt>|</tt> (or), <tt>~</tt> (not)
+to express conditions on the data</li>
+<li>Using vector indexing (logical vectors as array indexes) to select rows or columns</li>
+<li>Using relational operators <tt>&lt;</tt> (less than), <tt>&lt;=</tt> (less than or equal),
+<tt>&gt;</tt> (greater than), <tt>&gt;=</tt> (greater than or =), 
+<tt>==</tt> (equal), and <tt>~=</tt> (not equal) to compare data values.</li>
+</ul>
+</td>
+<td><ul>
+<li>Logical and relational expressions</li>
+</ul>
+</td>
+<td> </td>
+</tr>
+
+<tr>
+<td><strong>11</strong></td>
+<td>Sampling<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWYnoxTV9sWVdOY1E/SamplingLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/SamplingLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+
+<!--<a href="./lessons/SampleQuestions/SamplingQuestions.html"><strong>Questions</strong></a><br/> -->
+<p></p>
+<strong>FOCUS QUESTION: Do the characteristics of a sample reflect an entire population?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+<!--<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">If you can calculate it, you can compute it...()</a>
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">Creating functions --- an act of generalization ()</a> 
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinationsWithQuiz/Lesson8PlotCombinations.mp4">Lesson 8: Plot combinations(13:50 min)</a><br/>-->
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="./resources/CS1173PopulationsAndSamples.pdf">Populations and samples</a><br/>
+<!-- <a href="http://www.cs.utsa.edu/~cs1173/resources/CS1173HWP6SleepPatternWorksheet.docx">HWP6: Sleep pattern worksheet (Fall 2012)</a> -->
+</blockquote>
+
+</td>
+<td> 
+</td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td><strong>12</strong></td>
+<td>Hypothesis testing<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWSHN6aEJVX2pfZXM/HypothesisTestingLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/HypothesisTestingLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWTnIwWUlteXR0Snc/HypothesisTestingQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/HypothesisTestingQuestions.pdf">pdf</a>)<br/>
+
+<p></p>
+<strong>FOCUS QUESTION: How can I tell whether the test group is different from the control group?</strong>
+<p></p><strong>Supporting videos (narrated by Mark Doderer):</strong><br/>
+<blockquote>
+<br/>
+Hypothesis testing basics(10:50 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HypothesisTestingBasics.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingBasics/HypothesisTestingBasics.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingBasics/HypothesisTestingBasics.mp4">UTSA-mp4</a>
+
+<br/>
+One sample testing in MATLAB (ttest) (7:18 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HypothesisTestingMATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingMATLAB/HypothesisTestingMATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingMATLAB/HypothesisTestingMATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+Two sample testing in MATLAB (ttest2) (5:58 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HypothesisTestingTTest2MATLAB.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingTTest2MATLAB/HypothesisTestingTTest2MATLAB.html">UTSA</a>&nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingTTest2MATLAB/HypothesisTestingTTest2MATLAB.mp4">UTSA-mp4</a>
+
+<br/>
+More on sampling and confidence intervals  (3:11 min)<br/>
+&nbsp; &nbsp;
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWE9mZ2tteUw4Rk0/HypothesisTestingExample.mp4">Google-Drive</a> &nbsp; &nbsp;
+<a href="http://netdb1.cs.utsa.edu/cs1173/moviesNew/HypothesisTestingExample/HypothesisTestingExample.mp4">UTSA-mp4</a>
+
+</blockquote>
+
+<p></p><strong>Soft chalk Lesson:</strong><br/>
+<blockquote>
+<br/>
+<a href="https://sites.google.com/site/teachdatavis/topics/A-hypothesis-testing">https://sites.google.com/site/teachdatavis/topics/A-hypothesis-testing</a><br/>
+&nbsp; &nbsp;
+
+</blockquote>
+
+</td>
+<td><ul>
+<li>Formulating a testable hypothesis</li>
+<li>One-sided and two-sided hypothesis tests</li>
+<li>Understanding significance levels and p-values</li>
+</ul></td>
+
+<td>
+<ul>
+<li>The <tt>ttest</tt> for testing population mean</li>
+<li>The <tt>ttest2</tt> for comparing population means</li>
+<li>Using p-values and confidence intervals to obtain additional detail</li>
+</ul></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td><strong>13</strong></td>
+<td>Program control<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWUklXUlpYZURyTTg/ProgramControlLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/ProgramControlLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWV0tfTXhNOHoxVk0/ProgramControlQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/ProgramControlQuestions.pdf">pdf</a>)<br/>
+
+<p></p>
+<strong>FOCUS QUESTION:How can I adapt code for different situations based on data?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+<!--<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">If you can calculate it, you can compute it...()</a>
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">Creating functions --- an act of generalization ()</a> 
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinationsWithQuiz/Lesson8PlotCombinations.mp4">Lesson 8: Plot combinations(13:50 min)</a><br/>-->
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+</blockquote>
+
+</td>
+<td></td>
+<td>
+<ul>
+<li>Relational expressions</li>
+<li>Selection (<tt>if-else</tt>)</li>
+<li>Loops (<tt>for</tt>)</li>
+</ul>
+</td>
+<td> </td>
+<td> </td>
+</tr>
+
+
+<tr>
+<td><strong>14</strong></td>
+<td>Box plots<br/>
+<a href="./lessons/BoxPlotLesson/BoxPlotLesson.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp; 
+<a href="./lessons/BoxPlotQuestions/BoxPlotQuestions.html"><strong>Questions</strong></a><br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I compare the distributions of data sets that have outliers?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+<!--<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">If you can calculate it, you can compute it...()</a>
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinations.mp4">Creating functions --- an act of generalization ()</a> 
+<a href="http://netdb1.cs.utsa.edu/cs1173/movies/Lesson8PlotCombinationsWithQuiz/Lesson8PlotCombinations.mp4">Lesson 8: Plot combinations(13:50 min)</a><br/>-->
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="./resources/CS1173BoxPlots.pdf">Box plots</a><br/>
+</blockquote>
+
+</td>
+<td><ul>
+<li>Comparing distributions using box plots</li>
+<li>Computing relative data set sizes</li>
+<li>Observing medians and IQRs</li></ul></td>
+<td>
+<ul>
+<li>The <tt>boxplot</tt> function for showing distributions</li>
+<li>Using labeled data in box plots</li>
+<li>Other variations of the box plots</li>
+<li>The <tt>repmat</tt> function</li>
+</ul></td>
+<td><ul>
+<li>Distributions and outliers</li>
+	<li>Percentiles</li>
+	<li>Interquartile range</li>
+</ul>
+</td>
+<td> </td>
+</tr>
+
+
+<tr>
+<td><strong>15</strong></td>
+<td>Rates of change<br/> 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWWTFRNElRRXB6M2M/RatesOfChangeLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/RatesOfChangeLesson.pdf">pdf</a>) &nbsp;  &nbsp; 
+<a href="lessonPDFs/toHeel.txt">toHeel.txt</a> &nbsp;  &nbsp; 
+<a href="lessonPDFs/toRump.txt">toRump.txt</a> &nbsp;  &nbsp; 
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWMC00cEpIZ09tNGM/RatesOfChangeQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/RatesOfChangeQuestions.pdf">pdf</a>)<br/>
+
+<p> </p>
+<strong>FOCUS QUESTION: How can I characterize rates of change?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+<a href="./resources/CS1173DiffFunction.pdf">MATLAB diff function</a><br/>
+</blockquote>
+
+</td>
+<td >
+<ul>
+<li>Calculating slope, rate of change, or derivative of data</li>
+<li>Displaying the slope over plotted with the function to
+emphasize features</li>
+<li>Plotting data in multiple ranges on the same graph</li>
+<li>Using gridlines to facilitate reading the graph</li>
+<li>Calculating per capita growth rates for comparison in different populations</li>
+<li>Calculating interval midpoints by averaging lower ends with the upper ends</li>
+</ul></td>
+<td>
+<ul>
+<li>The <tt>diff</tt> function for computing adjacent differences</li>
+<li>Using a ratio of <tt>diff</tt> functions to approximate the slope</li>
+<li>Using <tt>end</tt> notation in array index selection</li>
+<li>Dividing a ratio of <tt>diff</tt> functions by the population to find
+the growth rate per capita or rate of change per capita
+</li>
+<li>Practicing with concepts of previous lessons</li></ul></td>
+<td><ul>
+<li>Slope of a line to measure rate of change between two points.</li>
+<li>Idea that the slope of the secant line approaches the slope of a curve in 
+the limit</li>
+<li>Handling of discontinuities</li>
+<li>Rate of change with respect to time</li>
+<li>Rate of change with respect to another variable</li>
+	<li>Percentage change</li>
+	<li>Growth rate per capita</li>
+</ul>
+</td>
+
+<td></td>
+
+
+</tr>
+
+<tr>
+<td><strong>16</strong></td>
+<td>Logarithmic scales<br/>
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWVzYyRXdVQVBES2s/LogScaleLesson.html"><strong>Lesson</strong></a> 
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LogScaleLesson.pdf">pdf</a>) &nbsp;  &nbsp;  
+<a href="https://googledrive.com/host/0B-W_U9RpVYKWc1hrRDQ5akc2dlk/LogScaleQuestions.html"><strong>Questions</strong></a>
+(<a href="https://googledrive.com/host/0B-W_U9RpVYKWSmlmYmNaRzU4ejA/LogScaleQuestions.pdf">pdf</a>)<br/>
+
+<p></p>
+<strong>FOCUS QUESTION: How can I use logarithmic scales to understand rates of growth?</strong>
+<p></p><strong>Supporting videos:</strong><br/>
+<blockquote>
+</blockquote>
+
+<p></p><strong>Supporting handouts:</strong><br/>
+<blockquote>
+</blockquote>
+
+
+</td>
+<td>
+<ul>
+<li>Calculating slope of data expressed on linear and logarithmic scales</li>
+<li>Plotting data on various types of logarithmic axes</li>
+<li>Examining rates of growth</li>
+<li>Performing a linear fit and finding the R<sup>2</sup> to characterize the quality of the fit.</li>
+<li>Finding per capita growth rates</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>The <tt>semilogx</tt> and <tt>semilogy</tt> functions</li>
+<li>The <tt>loglog</tt> function</li>
+<li>Examining rates of growth</li>
+</ul>
+</td>
+<td><ul>
+<li>Performing arithmetic operations such as addition and
+multiplication on arrays</li>
+<li>Using indexing to manipulate arrays</li>
+<li>Concept of array dimension</li>
+<li>Row and column operations</li>
+<li>Writing an equation to calculate a quantity described in words</li>
+</ul>
+</td>
+
+<td></td>
+
+
+</tr>
+
+
+<!--
+
+tr>
+<td><strong>3</strong></td>
+<td>Pie and bar charts<br/>
+<a href="Lesson3PiesAndBars/Lesson3PiesAndBars.html"><strong>Lesson</strong></a>   &nbsp;  &nbsp; 
+<a href="../lessonScripts/lesson3Script.m"><strong>Script</strong></a> &nbsp;  &nbsp; 
+<a href="Lesson3PiesAndBarsQuestions/Lesson3PiesAndBarsQuestions.html"><strong>Questions</strong></a><br/>
+<p></p>
+<strong>FOCUS QUESTION: How can I show proportions and relative sizes of different data groups?</strong>
+</td>
+<td>
+<ul>
+<li> Pie charts for displaying relative proportions</li>
+<li> Bar charts for displaying both proportion and magnitude</li>
+<li> Grouped or stacked bar charts for comparing multiple data sets</li>
+<li> Scaling a data set to make the axes more understandable</li>
+<li> First discussion of color</li></ul>
+</td>
+<td>
+<ul>
+<li> Additional practice with the <tt>sum</tt> function</li>
+<li>Using square brackets and commas to assemble an array</li>
+<li> Additional examples of use of transpose and array assembly</li>
+<li> The <tt>pie</tt> function for creating a pie chart</li>
+<li> The <tt>bar</tt> and <tt>barh</tt> functions for creating
+vertical and horizontal bar charts</li>
+<li> The <tt>stack</tt> option of the <tt>bar</tt> function</li>
+<li> The <tt>colormap</tt> function for changing the color scheme of a figure</li></ul></td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+<td><strong>13</strong></td>
+<td>Depicting confidence<br/>
+<a href="Lesson13ConfidenceIntervals/Lesson13ConfidenceIntervals.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp; 
+<a href="../lessonScripts/lesson13Script.m"><strong>Script</strong></a> &nbsp;  &nbsp; 
+<a href="Lesson13ConfidenceIntervalsQuestions/Lesson13ConfidenceIntervalsQuestions.html"><strong>Questions</strong></a><br/>
+<p></p> 
+<strong>FOCUS QUESTION: How reliable is my estimate of population mean?</strong>
+</td>
+<td><ul>
+<li>Using error bars to depict confidence intervals</li>
+<li>Averaging to extract trends and reduce noise</li>
+</ul></td>
+
+<td>
+<ul>
+<li>Using reshaping arrays to average in different ways</li>
+</ul></td>
+</tr>
+
+<tr>
+<td><strong>14</strong></td>
+<td>Tests for normality or other distributions<br/>
+<a href="Lesson14TestsForNormality/Lesson14TestsForNormality.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp;
+<a href="../lessonScripts/lesson14Script.m"><strong>Script</strong></a> &nbsp;  &nbsp;  
+<a href="Lesson14TestsForNormalityQuestions/Lesson14TestsForNormalityQuestions.html"><strong>Questions</strong></a>
+</td>
+<td><ul>
+<li>Testing for normality through visual and computational tests</li>
+</ul></td>
+
+<td>
+<ul>
+<li>The <tt>normplot</tt> function for visually testing normality</li>
+<li>The <tt>lilliefors</tt> function to test for normality</li>
+</ul></td>
+</tr>
+
+<tr>
+<td><strong>17</strong></td>
+<td>Modeling the heart<br/>
+<a href="Lesson17ModelingTheHeart/Lesson17ModelingTheHeart.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp;
+<a href="../lessonScripts/lesson17Script.m"><strong>Script</strong></a> &nbsp;  &nbsp;  
+<a href="Lesson17ModelingTheHeartQuestions/Lesson17ModelingTheHeartQuestions.html"><strong>Questions</strong></a>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr>
+<td><strong>18</strong></td>
+<td>Working with dates<br/>
+<a href="Lesson18WorkingWithDates/Lesson18WorkingWithDates.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp; 
+<a href="../lessonScripts/lesson118Script.m"><strong>Script</strong></a> &nbsp;  &nbsp; 
+<a href="Lesson18WorkingWithDatesQuestions/Lesson18WorkingWithDatesQuestions.html"><strong>Questions</strong></a>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr>
+<td><strong>19</strong></td>
+<td>Input and output<br/>
+<a href="Lesson19InputAndOutput/Lesson19InputAndOutput.html"><strong>Lesson</strong></a>  &nbsp;  &nbsp; 
+<a href="../lessonScripts/lesson19Script.m"><strong>Script</strong></a> &nbsp;  &nbsp; 
+<a href="Lesson19InputAndOutputQuestions/Lesson19InputAndOutputQuestions.html"><strong>Questions</strong></a>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+-->
+</tbody>
+</table>
+
+<p class="authorInfo">
+This course summary was written by Kay A. Robbins of the
+University of Texas at San Antonio and last modified by Dawn Roberson on 5 Jan 2015.
+Please contact <a href="mailto:krobbins@cs.utsa.edu">krobbins@cs.utsa.edu</a>
+with comments or suggestions.
+</p>
+</body>
+
+</html>
