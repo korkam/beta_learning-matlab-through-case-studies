@@ -1,8 +1,5 @@
 %% GETTING STARTED WITH MATLAB
-function some_output = code_intro()
-clear all; clc; %#ok<*NOPTS,*NASGU,*NOEFF>
-some_output = [];
-if 0
+clear all; clc; %#ok<*NOPTS,*NASGU,*NOEFF,*LOGL,*ASGLU,*SAGROW>
 %% <http://nyu.libguides.com/dataservices NYU DATA SERVICES>
 % * Tutorials and support for academic software
 % * One-on-one consultation by appointment
@@ -39,7 +36,7 @@ if 0
 % * Diverse set of available toolboxes
 % * Vast number of pre-defined functions and implemented algorithms
 % * Large online community (MATLAB Exchange)
-%% EXAMPLES OF BASIC OPERATIONS
+%% Examples of basic operations
 % * + addition
 % * - subtraction
 % * * multiplication
@@ -63,12 +60,33 @@ whos                    % Notice that A is a 2x2 matrix
 v = [3 -4]              % v is a 1x2 matrix (or vector)
 w = [5 ; 7]             % w is a 2x1 matrix (or vector)
 u=A*w                   % matrix multiplication
-% A*v                   % illegal since the number of columns of A
+A*v                     % illegal since the number of columns of A
                         % does not equal the number of rows of w
 v*A                     % legal matrix multiplication
-v.*w'                   % dot multiplication (only for matrices with same dimensions)
-% * A.*A vs A*A vs A^2 vs A.^2
-%% FUNCTIONS
+v.*w'                   % dot multiplication 
+                        % (only for matrices with same dimensions)
+%%
+% A.*A vs A*A vs A^2 vs A.^2
+x=1:10                  % Creates the vector [1 2 3 4 5 6 7 8 9 10]
+y=0:0.2:1               % Creates the vector [0 0.2 0.4 0.6 0.8 1.0]
+z=[y x]
+%%
+% Exercise: Create a vector of numbers between 5 and -5 that skips 0
+x = [];
+y = [];
+plot(x,y)
+z=0:0.02:2;
+plot(exp(z))
+plot(z,exp(z))
+plot(sin(z))
+z = linspace(0,6*pi,50)
+plot(z,sin(z))
+%% Documentation
+% * *help* prints help in the command window
+% * *doc* shows help in documentation browser
+% * Online Documentation: <http://mathworks.com/help>
+% * Find relevant functions through _related functions_ at the bottom of the _Help_ page
+%% Functions
 % * Functions allow users to easily perform complex tasks using custom
 % input and output
 % * In most cases, *output=function(input)* (both are optional)
@@ -81,30 +99,27 @@ v.*w'                   % dot multiplication (only for matrices with same dimens
 %     function s = cube(x)
 %           s = x.^3;
 %     end
-%% DOCUMENTATION
-% * *help* prints help in the command window
-% * *doc* shows help in documentation browser
-% * Online Documentation: <http://mathworks.com/help>
-% * Find relevant functions through _related functions_ at the bottom of the _Help_ page
-%% MORE BASICS: Numerical Matrices
-zeros(4,5)              % A 4x5 matrix of zeros
-ones(2,1)               % A 2x1 matrix of ones
-eye(3,3)                % A 3x3 diagonal matrix of 1’s
-v = [3 -4];
-diag(v)                 % A diagonal matrix whose diagonal is the elements of v
-x=1:10                  % Creates the vector [1 2 3 4 5 6 7 8 9 10]
-y=0:0.2:1               % Creates the vector [0 0.2 0.4 0.6 0.8 1.0]
-z=linspace(0,1,5)       % Creates a vector with 5 elements linearly spaced between 0 and 1
-sin(pi/3)               % the sine function (in radians)
-exp(x)                  % Note that we have calulcated exp() for all entries in x
-true(2,4)               % Returns 2x4 matrix of ones
-false(2)                % Returns 2x2 matrix of zeros
+%% Logicals, INFs and NaNs
+true
+false
 logical(5)              % All nonzero values of logical are true
 logical(-17)
 logical(0)
 [0 1 NaN -NaN Inf -Inf 5 -Inf*Inf 5*NaN Inf*NaN]
-[65 'c']
-%% INDICES AND COLON OPERATOR
+%% Creating Matrices
+zeros(4,5)              % A 4x5 matrix of zeros
+ones(2,1)               % A 2x1 matrix of ones
+eye(3,3)                % A 3x3 diagonal matrix of 1’s
+true(2,4)               % Returns 2x4 matrix of ones
+false(2)                % Returns 2x2 matrix of zeros
+nan(2,3)                % Returns 2x3 matrix of NaNs (not-a-number)
+inf(2,3)                % Returns 2x3 matrix of INFs
+rand(5,2)               % Random numbers between 0 and 1
+randn(3,2,2)            % Standard normal random numbers
+randi(8,6,2)            % 6x2 matrix of random integers between 1 and 8
+%%
+% Exercise: create a vector of 5 random intergers between 10 and 20
+%% Indices and colon operator
 
 A = [1 3 7; 2 4 9]
 A(:)
@@ -128,16 +143,17 @@ B = A(:,2,:)
 size(B)
 C = squeeze(B)
 size(C)
-%% BASIC OPERATIONS WITH STRINGS
+%% Basic operations with strings
 
-x='Pete'                     % Assigns an array of characters to variable x
+x='Pete'                    % Assigns an array of characters to variable x
 y='Jane'              
 [x y]                       % concatenation
-[x;y]                       % concatenation only works because x and y are the same size
+[x;y]                       % concatenation only works because x and y are 
+                            % the same size
 z = ['Steve'];
 [x ' and ' z]
-%[x;z]                      % Doesn’t work – sizes do not match
-x(2)                        % prints ‘e’
+[x;z]                       % Doesn't work: sizes do not match
+x(2)                        % prints e’
 
 strfind('abcde_cd','cd')    % finding one string within another	
 
@@ -149,8 +165,9 @@ strcmp(y,Y)                 % compare strings
 strcmpi(y,Y)                % compare strings ignoring case
 lower(Y)                    % convert to lower case
 upper(y)                    % convert to upper case
-
-%% FLOW CONTROL: IF, ELSEIF, ELSE
+name = input('What is your name?','s')
+strcmpi(name,'Denis')
+%% Flow control: IF, ELSEIF, ELSE
 % LOGICAL COMPARISON: >, <, >=, <=, ==, &&, ||
 A = randn
 
@@ -166,7 +183,7 @@ else
     % to check for these explicitly use
     % isnan(),isinf(),isnumeric(),isempty(),exist()
 end
-%% FLOW CONTROL: LOOPS
+%% Flow control: Loops
 % The FOR loop repeats a group of statements a fixed, predetermined number of times.
 % The WHILE loop repeats a group of statements an indefinite number of times
 clear x
@@ -191,7 +208,7 @@ while y <= 100
 end
 disp(y)
 
-%% CELL ARRAYS
+%% Cell Arrays
 % Both cell and structure arrays allow you to store data of different types and sizes.
 % Commonly used to store lists of text strings and other heterogeneous data from spreadsheets. 
 % Cell arrays have rows and columns just like a matrix of numbers, except each cell can contain any object,
@@ -208,9 +225,10 @@ category = {'parent'; 'parent'; 'child'}
 A = {name age category}
 A{:,1}
 
-%% STRUCTURE ARRAYS
+%% Structure Arrays
 % Structure arrays contain data in fields that you access by name.
-B = struct('name',{'Bob' 'Jane' 'Mia'},'age',{42 38 21},'category',{'parent' 'parent' 'child'})
+B = struct('name',{'Bob' 'Jane' 'Mia'},'age',{42 38 21},...
+           'category',{'parent' 'parent' 'child'})
 B(2).name 	% returns string ‘Jane’
 B(3).age 	% returns 21
 B.category	% this field is ‘adult’ for all indices
@@ -222,62 +240,68 @@ ages = [B.age]  % a 1x3 array
 names = {B.name}% a 1x3 cell
 names(1)        % a cell
 names{1}        % a string
-end
-%% ENTERING/STORING DATA
+%% Entering/Storing Data
+% Can use functions such as |csvread|, |dlmread|, or |xlsread| to read in
+% the data, but it's much easier to generate appropriate code with the
+% Import Wizard (Home Tab -> Import Data)
+path_to_file = 'C:\Users\NetID\Desktop\demo.csv';
+[num,txt,raw] = xlsread(path_to_file);
+% Similarly, can use |csvwrite|, |dlmwrite|, or |xlswrite| to write data out
+result_file_name = strrep(path_to_file,'demo','demo_out');
+csvwrite(result_file_name,num)
+xlswrite(result_file_name,raw)
+% However, it is much better to save in MATLAB format.
+save('C:\Users\NetID\Desktop\demo_out.mat','num','txt','raw')
 
-% CSVREAD assumes numeric data
-% csv_data = csvread('C:\Users\Denis\Google Drive\DenisDocs\MATLAB\demo.csv',1); % gives error
-% csv_data = csvread('C:\Users\dr120\demo.csv',1,2); % start on 2nd row and 3rd column
-
-
-% [num,txt,raw] = xlsread('C:\Users\dr120\demo.csv');
-
-
-% csvwrite('C:\Users\dr120\demo.csv',num)
-% xlswrite('C:\Users\dr120\demo.csv',raw)
-
-% * save in MATLAB format
-% save('C:\Users\dr120\demo_out.mat','num','txt','raw')
-
-%% BASIC PLOTTING: Scatter Plot
-x=0:pi/20:2*pi;
+%% Basic Plotting: Scatter Plot
+clf
+x=0:pi/20:6*pi;
 y = sin(x);
 plot(x,y)
-xlabel('0 to 2\pi')
+xlabel('0 to 6\pi')
 ylabel('sine of x')
 title('Plot of Sine Function','Fontsize',14)
 
-xlim([-0.5 2*pi+0.5])
+xlim([0 6*pi])
 ylim([-1.25 1.25])
 hold on
-plot(x,y,'r.')
+extremes = y==1 | y==-1;
+plot(x(extremes),y(extremes),'ro')
 legend('plot1','plot2')
-%% BASIC PLOTTING: Subplot and logarithmic plots
+%% Basic Plotting: Subplot and logarithmic plots
 x = linspace(2,10,100);
 y = exp(x);
 figure; 
-subplot(2,2,1);     plot(x,y);              xlabel('x'); ylabel('y');       legend('1','FontSize',18,'Location','NorthWest');       
-subplot(2,2,2);     semilogy(x,y);          xlabel('x'); ylabel('log-y');   legend('2','FontSize',18,'Location','NorthWest')
-subplot(2,2,3);     semilogx(x,y);          xlabel('log-x'); ylabel('y');   legend('3','FontSize',18,'Location','NorthWest')
-subplot(2,2,4);     plotyy(x,y,x,log(y));   xlabel('x'); ylabel('y');       legend('4','4','FontSize',18,'Location','NorthWest')
-%% BASIC PLOTTING: Histogram
+
+subplot(2,2,1); plot(x,y);            
+xlabel('x'); ylabel('y');     legend('1','FontSize',18,'Location','NorthWest');       
+
+subplot(2,2,2); semilogy(x,y);        
+xlabel('x'); ylabel('log-y'); legend('2','FontSize',18,'Location','NorthWest')
+
+subplot(2,2,3); semilogx(x,y);
+xlabel('log-x'); ylabel('y'); legend('3','FontSize',18,'Location','NorthWest')
+
+subplot(2,2,4); plotyy(x,y,x,log(y));
+xlabel('x'); ylabel('y');     legend('4','4','FontSize',18,'Location','NorthWest')
+%% Basic Plotting: Histogram
 mu = 9;
 sigma = 3;
 v = normrnd(mu,sigma,[10000 1]);
 clf
 hist(v,50) % 50 bins, default is 10
-%% BASIC PLOTTING: 3D Histogram
+%% Basic Plotting: 3D Histogram
 v2 = normrnd(mu,sigma,[10000 2]);
 v2(:,2) = v2(:,2)*1.5;
 clf
 hist3(v2,[50 50]);
-%% BASIC PLOTTING: Using the color dimension
+%% Basic Plotting: Using the color dimension
 clf
 [N,C] = hist3(v2,[50 50]);
 x = [C{1}(1) C{1}(end)];
 y = [C{2}(1) C{2}(end)];
 image(x,y,N); axis image
-%% OTHER 3D-PLOTTING
+%% Other 3D Plotting
 [X,Y]=meshgrid(-8:.5:8);
 R=sqrt(X.^2+Y.^2)+eps;
 Z=sin(R)./R;
@@ -294,17 +318,20 @@ subplot(2,2,4)
 surf(X,Y,Z,'Facecolor','r','Edgecolor','none')
 camlight left;lighting phong
 view(-15,65)
-%% GEOMETRIC STRUCTURES
+%% Geometric structures
 clf;
 colormap autumn
 subplot(2,2,1); 
     sphere(50);
+    
 subplot(2,2,2); 
     [x, y, z] = ellipsoid(0,0,0,6,3,3,50);
     surfl(x, y, z)
     axis equal
+    
 subplot(2,2,3); 
     cylinder(50);
+    
 subplot(2,2,4); 
     t = 0:pi/10:2*pi;
     [X,Y,Z] = cylinder(2+cos(t));
@@ -320,43 +347,57 @@ y = MPG;
 X = [Horsepower Weight Model_Year];
 stats = regstats(y,X,'linear')
 %%
-mdl = LinearModel.fit([Horsepower Weight Model_Year],MPG)
+mdl = LinearModel.fit(X,y)
 plot(mdl)
+methods(mdl)
 %% STATISTICS TOOLBOX: T-TEST
-x = normrnd(9,3,[100,1]);
-y = normrnd(8,2,[100,1]);
 
-figure; subplot(2,1,1); hist(x,100); xlim([-5 20]); subplot(2,1,2); hist(y,100); xlim([-5 20])
-[h,p,ci,stats] = ttest2(x,y); % independent samples t-test
+% 100 random numbers from normal distribution with mean=9 and st.dev.=3
+x = normrnd(9,3,[100,1]);
+% 100 random numbers from normal distribution with mean=8 and st.dev.=2
+y = normrnd(8,2,[100,1]);   
+
+figure; 
+subplot(2,1,1); hist(x,100); xlim([-5 20]);
+subplot(2,1,2); hist(y,100); xlim([-5 20])
+
+% independent samples t-test
+[h,p,ci,stats] = ttest2(x,y); 
 text(12,3.5,['t-test: p = ' sprintf('%0.4f',p)])
-[p,h,stats] = ranksum(x,y); % non-parametric test
+
+% non-parametric test
+[p,h,stats] = ranksum(x,y); 
 text(12,2.5,['rank test: p = ' sprintf('%0.4f',p)])
-[h,p,ci,stats] = vartest2(x,y); % test for equality of variances (independent samples)
+
+% test for equality of variances (independent samples)
+[h,p,ci,stats] = vartest2(x,y); 
 text(12,1.5,['var test: p = ' sprintf('%0.4f',p)])
 %% STATISTICS TOOLBOX: Random Number Generation Tool
 % Example: Get chisquare with df=10
 
-% randtool
+randtool
 %% STATISTICS TOOLBOX: Distribution Fitting Tool
 % fit a distribution to the data from previous step
 
-% dfittool
+dfittool
 %% CURVE-FITTING TOOLBOX
 
 t = linspace(0,6*pi, 100)';
 s = sin(t)+0.1*randn(100,1);
 
-% cftool
+cftool
 
-% [fitresult, gof] = fit( t, s, fittype('fourier1'), fitoptions( fittype('fourier1') ));
+[fitresult, gof]=fit(t,s,fittype('fourier1'),fitoptions(fittype('fourier1')));
 
 %% IMAGE PROCESSING TOOLBOX
 close all
 figure;
 imdata = imread('ngc6543a.jpg');
 image(imdata)
-text(20,20, 'This image, taken by the Hubble Space Telescope, shows a very complex planetary nebula.','Color','w')
-text(20,40, 'It is nicknamed the "Cat''s Eye Nebula" and is about 1,000 years old. (NASA)','Color','w')
+text(20,20, ['This image, taken by the Hubble Space Telescope, shows a ' ...
+            'very complex planetary nebula.'],'Color','w')
+text(20,40, ['It is nicknamed the "Cat''s Eye Nebula" and is about 1,000 '...
+            'years old. (NASA)'],'Color','w')
 set(gca,'XtickLabel',[],'YtickLabel',[]),shg
 %%
 % * Isolate red, green, and blue
@@ -387,10 +428,14 @@ subplot(2,2,3); imshow(io,[])
 %%%
 [Lo,No] = bwlabel(io);
 stats = regionprops(Lo,'all');
-clear cns; for k=1:No cns(k,:) = stats(k).Centroid; areas(k,:) = stats(k).Area; end
+clear cns; 
+for k=1:No 
+    cns(k,:) = stats(k).Centroid;
+    areas(k,:) = stats(k).Area; 
+end
 hold on; plot(cns(:,1),cns(:,2),'r*')
 subplot(2,2,4); hist(areas)
-%% ADDITIONAL RESOURCES
+%% Additional resources
 % * <http://nyu.libguides.com/content.php?pid=38898&sid=1554472 Data Services Training page>
 % * Data Services Staff <data.services@nyu.edu> or <http://bit.ly/datameeting make an
 % appointment>
