@@ -1,0 +1,17 @@
+% ENG6 Project 1 Solution
+
+ 
+% Task 25
+imdata=imread('PartUSA.tif');
+imshow(imdata);
+for i=1:11,
+    [x y] = ginput(6);
+    Xstate(i,:) = x;
+    Ystate(i,:) = y;
+end
+% Export Xstate and Ystate into .mat files
+myState = ['WA' 'OR' 'ID' 'MT' 'WY' 'CA' 'NV' 'UT' 'AZ' 'CO' 'NM']
+save myState.mat
+save Xstate.mat
+save Ystate.mat
+

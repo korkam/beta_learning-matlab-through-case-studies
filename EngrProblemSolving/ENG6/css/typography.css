@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 76%; /* we set the font size to 76% to compensate for different browsers and operating systems. 76% tends to look like 12px on most screens */
+line-height: 1.5em; /* we set the line height equalt to the height of an uppercase "M" character */
+}
+div {
+font-size: 1em;
+}
+
+img {
+border: 0;
+}
+
+/* LINKS */
+a,
+a:link {
+color:#0868a8;
+}
+
+a:visited {
+color:#5585b5;
+}
+
+/* TEXT */
+p {
+font-size: 1em;
+margin: 0 0 1.5em 0;
+padding: 0;
+line-height:1.4em;
+}
+
+blockquote {
+border-left:10px solid #ddd;
+margin-left:10px;
+}
+
+pre {
+font-family: monospace;
+font-size: 1.0em;
+}
+
+strong, b {
+font-weight: bold;
+}
+
+em, i {
+font-style:italic;
+}
+
+code {
+font-family: "Courier New", Courier, monospace;
+font-size: 1em;
+white-space: pre;
+}
+/* END TEXT */
+
+/* HEADINGS */
+h1, h2 {
+color: #124289; 
+font: small-caps 900 14px/21px verdana, arial, sans-serif, "trebuchet ms", Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; 
+text-decoration: none; 
+text-transform: none; 
+word-spacing: 5px; 
+letter-spacing: 2px; 
+margin: auto; 
+padding: 0            
+}
+h2  {
+color: #8b7b17;
+font-size: 13px;
+font-family: verdana, arial, sans-serif, "trebuchet ms", Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; 
+font-weight: 700; 
+text-decoration: none; 
+margin-top: 6px; 
+margin-bottom: 0;     
+}
+h3 {
+color: #522; 
+font-size: 13px; 
+font-family: verdana, arial, sans-serif, "trebuchet ms", Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; 
+font-weight: 700; 
+font-variant: small-caps; 
+}
+h4 {
+color: #7c7844; 
+font-size: 13px; 
+font-family: verdana, arial, sans-serif, "trebuchet ms", Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; 
+font-weight: 700; 
+font-variant: small-caps; 
+}
+h4home {
+color: #7c7844; 
+font-size: 13px; 
+font-family: verdana, arial, sans-serif, "trebuchet ms", Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; 
+font-weight: 700; 
+}
+/* END HEADINGS */
+
+/* LISTS */
+ul {
+line-height:1.4em;
+margin: 0 0 1.5em 0;
+padding: 0;
+}
+
+ul li {
+margin: 0 0 0.25em 30px;
+padding: 0;
+}
+
+ol {
+font-size: 1.0em;
+line-height: 1.2em;
+margin: 0 0 1.5em 0;
+padding: 0;
+}
+
+ol li {
+font-size: 1.0em;
+margin: 0 0 0.25em 30px;
+padding: 0;
+}
+

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+background:#1f3453 url('../images/background.jpg') top left repeat-x;
+margin:0;
+padding:0;
+}
+
+div#page {
+position:relative;
+width:759px;
+margin:20px auto;
+padding:0;
+background-color:#f1f0e6;
+}
+
+div#header {
+position:relative;
+width:759px;
+height:340px;
+margin:0;
+padding:0;
+}
+
+div#coe {
+position:relative;
+float:left;
+width:759px;
+height:29px;
+background:url('../images/coe.jpg') top left no-repeat;
+padding:0;
+margin:0;
+}
+
+div#left {
+position:relative;
+float:left;
+width:390px;
+height:283px;
+background:url('../images/left.jpg') top left no-repeat;
+padding:0;
+margin:0;
+}
+
+div#right {
+position:absolute;
+top:29px;
+right:0;
+width:371px;
+height:283px;
+background:url('../images/right.jpg') top left no-repeat;
+padding:0;
+margin:0;
+}
+
+div#right img {
+position:absolute;
+width:371px;
+height:214px;
+top:0;
+right:0;
+}
+
+div#nav {
+position:relative;
+float:left;
+width:759px;
+height:28px;
+background:url('../images/menubar.jpg') top left no-repeat;
+padding:0;
+margin:0;
+}
+
+div#mainbody {
+position:relative;
+}
+
+div.inside {
+margin:25px;
+} /* Solves padding compatability issues */

@@ -1,0 +1,30 @@
+% ENG 6
+%
+% Lab 7 Solution
+%
+%
+%
+
+clear all
+
+% Task 1
+arduino_obj = arduino('COM21');
+
+% Task 2
+arduino_obj.pWrite(0,128);
+pause(0.1);
+
+% Task 3
+arduino_obj.pWrite(1,255);
+pause(0.1);
+
+% Task 4
+for i=1:255,
+    % Step 1)
+    data_point = arduino_obj.analogRead(0);
+    
+    % Step 2)
+    data_voltage = data_point*5/1024;
+    
+    % Step 3)
+    data_vector(i) =-

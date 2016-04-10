@@ -1,0 +1,35 @@
+% ENG6 Project 1 Solution
+
+
+clear all
+
+% Task 26
+load Xstate.mat
+load Ystate.mat
+load myState.mat
+imdata=imread('PartUSA.tif');
+imshow(imdata);
+city_index = -1;
+exit = 0;
+while(city_index == -1 && exit == 0)
+    [x y] = ginput(1);
+    for i=1:11
+        in_boundary = inpolygon(x,y,Xstate(i,:),Ystate(i,:));
+        if in_boundary == 1
+            city_index = i;
+            exit = 1;
+            break;
+        end
+    end
+    if in_boundary == 0
+        disp('Out of Bound! Click Again!');
+    else
+        fprintf('You clicked on: %s - (%d,%d)\n\n',myState(city_index,:),x,y);
+    end
+end
+
+for i=1:length(wind(:,1)),
+    if strcmp(myState(city_index,:),state(i,:))
+    fprintf('%s, %s has %d kWh of average monthly solar insolation.\n', city(i,:), state(i,:), sum(solar(i,:))/12);
+    fprintf('%s, %s has %d mph of average monthly wind speed.\n', city(i,:), state(i,:), sum(wind(i,:))/12));
+end

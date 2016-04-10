@@ -1,0 +1,19 @@
+function [Voptimal Ioptimal] = solar_panel_optimal(illum,Nrow,Ncol)
+
+illum_table = [500 0.21; 600 0.3; 700 0.4; 800 0.5; 900 0.6; 1000 0.6; 1100 0.7; 1200 0.8; 1300 0.9; 1400 1.1;];
+
+illum_current = 0; i=1;
+while (~illum_current)
+    if (illum_table(i,1) == illum)
+        illum_current = illum_table(i,2);
+    end
+    i=i+1;
+end
+Voptimal = (1.5*0.026*(log(illum_current/(0.6*10^-6))+1)-0.093);
+
+Ioptimal = Ncol*(illum_current-0.6*(10^-6)*(exp(Voptimal/(1.5*0.026))-1));
+
+Voptimal = Nrow*Voptimal;
+
+end
+

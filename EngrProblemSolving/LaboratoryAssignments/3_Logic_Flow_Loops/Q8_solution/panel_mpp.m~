@@ -1,0 +1,17 @@
+function [ vmp imp] = panel_mpp( Il , Nrow, Ncol)
+% This function calculates the maximum power point for a solar panel of
+% size Nrow by Ncol undergoing illumination that generates Il (generation current)
+%
+%
+
+Id = Il/Ncol;
+
+[ vd_mp id_mp] = pd_mpp( Id );
+
+vmp = vd_mp*Nrow;
+imp = id_mp*Ncol;
+
+
+end
+
+

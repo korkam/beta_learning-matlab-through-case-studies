@@ -1,0 +1,48 @@
+clear all
+
+% % Import all variables
+load question8.mat
+
+
+%%
+Nrow = 35;
+Ncol = 1;
+    
+figure(1)
+hold
+
+% Iterate through all time points.
+for i=1:length(load_profile),
+    
+    % Look-up the current that corresponds to the illumination condition
+    for j=1:length(illumination),
+        if(illumination(j,1) == illumination_profile(i))            
+            % Calculate the average current.
+             i_Light = 0;
+             for k=2:6,
+                 i_Light = i_Light + illumination(j,k);
+             end
+             i_Light = i_Light/length(k);
+        end
+    end
+    
+    % At this point, we have 'i_Light', which is the current that corresponds 
+    % to the current illumination condition, 'illumination_profile(i)'
+
+    % Calculate Vmp and Imp that corresponds to i_Light
+    % -- This is the maximum amount of power available from the solar
+    % panel under illumination that gives 'i_Light'.
+    [vmp imp] = panel_mpp(i_Light, Nrow, Ncol);
+
+    % Calculate what is actually delivered.
+    vpd = pd( i_Light )*Nrow;
+    ipd = vpd / load_profile(i);    
+    
+    plot(i,vpd*ipd,'r*');
+    plot(i,vmp*imp,'b*');
+end
+hold
+
+
+
+

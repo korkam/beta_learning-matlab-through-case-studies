@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*******************************************************************************************
+*                           Horizontal dropdown suckerfish menu                            *
+*******************************************************************************************/
+
+/* common styling */
+#nav {position:relative; margin:0;margin:0 auto; z-index:9999;float:right; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px;}
+#mainlevel-nav li a, #mainlevel-nav li a:visited, #nav ul.menu-nav li a, #nav ul.menu-nav li a:visited {display:block; text-decoration:none; color:#e2e6bc; padding:0 8px; height:26px; text-align:center;line-height:28px;overflow:hidden;}
+#nav ul {padding:0; margin:0;list-style-type: none; }
+#nav ul li {position: relative; display:inline; float:right; margin:0px; position:relative; text-align:center; width: auto !important; width:90px;}
+#nav ul li ul {display: none;}
+#nav ul li ul li { text-align:left;}
+#nav ul.menu-nav li ul li a:visited {color:#243f61; padding: 0 10px; text-align:left;}
+
+/* specific to compliant browsers browsers */
+#mainlevel-nav li:hover a , #nav ul.menu-nav li:hover a { color:#e2e6bc; background-color:#152036; }
+#mainlevel-nav li:hover a:hover, #mainlevel-nav a#active_menu-nav, #nav ul.menu-nav li:hover a:hover, #nav ul.menu-nav a#active_menu { background-color:#152036;}
+#nav ul.menu-nav li:hover ul {display:block; position:absolute; top:28px; right:0; width:225px; background-color:#a4b5cb;  border:1px solid #152036; border-bottom:none; border-top:1px solid #151b31;}
+#nav ul.menu-nav li:hover ul li.parent a{ background: #a4b5cb url('../images/arrow-2.png') center right no-repeat;}
+#nav ul.menu-nav li:hover ul li.parent li a{ background:none;}
+#nav ul.menu-nav li:hover ul li {width:205px;}
+#nav ul.menu-nav li:hover ul li a {color:#243f61; width:205px; text-align:left; height:28px; background-color:#a4b5cb; border-bottom:1px solid #152036; padding:0 10px; font-weight:normal;}
+#nav ul.menu-nav li:hover ul li:hover a {background-color:#7e94b2;}
+#nav ul.menu-nav li:hover ul li ul {display: none;}
+#nav ul.menu-nav li:hover ul li a {display:block;}
+#nav ul.menu-nav li:hover ul li a:hover {background-color:#7e94b2; color:#552222;}
+#nav ul.menu-nav li:hover ul li:hover ul {display:block; position:absolute; left:225px; top:-1px; border:1px solid #243f61; border-bottom:none;}
+
+/* specific to IE6 and below browsers */
+#nav ul.menu-nav li.iehover {
+z-index:1000;
+}
+#nav ul.menu-nav li.iehover a {color:#e2e6bc; background-color:#152036; }
+#nav ul.menu-nav li:hover a:hover { background-color:#152036;}
+#nav ul.menu-nav li.iehover ul {display:block; position:absolute; top:28px; right:0; width:225px; background-color:#a4b5cb;  border:1px solid #152036; border-bottom:none; border-top:1px solid #151b31; z-index:9998;}
+#nav ul.menu-nav li.iehover ul li.parent a{ background: #a4b5cb url('../images/arrow-2.gif') center right no-repeat;}
+#nav ul.menu-nav li.iehover ul li.parent li a{ background:none;}
+#nav ul.menu-nav li.iehover ul li {width:225px;}
+#nav ul.menu-nav li.iehover ul li a {color:#243f61; width:225px; text-align:left; height:28px; background-color:#a4b5cb; border-bottom:1px solid #152036; padding:0 10px; font-weight:normal;}
+#nav ul.menu-nav li.iehover ul li.iehover a {background-color:#7e94b2;}
+#nav ul.menu-nav li.iehover ul li ul {display: none;}
+#nav ul.menu-nav li.iehover ul li a {display:block;}
+#nav ul.menu-nav li.iehover ul li a:hover {background-color:#7e94b2; color:#552222;}
+#nav ul.menu-nav li.iehover ul li.iehover ul {display:block; position:absolute; left:225px; top:-1px; border:1px solid #243f61; border-bottom:none;}

@@ -1,0 +1,24 @@
+function [ vmp imp] = pd_mpp( Il, Ncol )
+% This function calculates the maximum power point for a single photodiode
+% under illumination that generates Il (generation current)
+%
+%
+
+q = 1.6*10^-19;
+k = 1.38*10^-23;
+T = 300;
+n = 1.5;
+I0 = 0.6e-6/Ncol;
+
+
+voc = ((n*k*T)/q)*log((Il/I0)+1);
+
+vmp = voc-0.093;
+for i=1:10, 
+    vmp = voc - (n*k*T/q)*log((vmp/(n*k*T/q))+1);
+end
+imp = Il-I0*(exp((q*vmp)/(n*k*T))-1);
+
+end
+
+

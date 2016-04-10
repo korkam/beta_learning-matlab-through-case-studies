@@ -1,0 +1,18 @@
+clear all
+clc
+
+load light1.mat
+load light2.mat
+load light3.mat
+
+dat1_mean = mean(light1);
+dat2_mean = mean(light2);
+dat3_mean = mean(light3);
+
+dat1_var = var(light1,1);
+dat2_var = var(light2,1);
+dat3_var = var(light3,1);
+
+fprintf('The mean for dataset 1 is %2.2d and the variance is %d\n', dat1_mean, dat1_var);
+fprintf('The mean for dataset 2 is %2.2d and the variance is %d\n', dat2_mean, dat2_var);
+fprintf('The mean for dataset 3 is %2.2d and the variance is %d\n', dat3_mean, dat3_var);
