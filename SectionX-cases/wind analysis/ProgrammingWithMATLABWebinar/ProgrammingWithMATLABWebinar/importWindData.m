@@ -11,7 +11,7 @@
 % Copyright 2013-2016 The MathWorks, Inc.
 
 %% Initialize variables.
-filename = 'C:\Users\rqian\Desktop\ProgrammingWithMATLAB\winddata.txt';
+filename = '/Users/koreykam/Documents/GitHub/beta_learning-matlab-through-case-studies/SectionX-cases/wind analysis/ProgrammingWithMATLABWebinar/ProgrammingWithMATLABWebinar/winddata.txt';
 delimiter = '\t';
 startRow = 2;
 

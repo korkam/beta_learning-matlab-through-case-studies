@@ -16,3 +16,4 @@ hold on
 scatter(Temp(IdxIce),AvgSpeed(IdxIce),'r')
 AvgSpeed(IdxIce) = [];
 histogram(AvgSpeed)
+hold off
