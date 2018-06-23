@@ -1,0 +1,81 @@
+FileFormat = BNI-1                                                           
+Filename = f:\anonymous_2f1177c5_2a99_11d5_a850_00e0293dab97\data.bni                                                                                                                                                                                             
+Comment = 
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+PatientName = anonymous
+PatientId = 1                       
+PatientDob =                                 
+Sex =        
+Examiner =                                                                                                                                 
+Date = 
+Time = 
+Rate = 400 Hz
+EpochsPerSecond = 1
+NchanFile = 32
+NchanCollected = 32
+UvPerBit = 0.899781
+AuxUvPerBit = 0.899781
+MontageGaped = Fp1,Fp2,F3,F4,C3,C4,P3,P4,O1,O2,F7,F8,T7,T8,P7,P8,Fz,Cz,Pz,Oz,F9,F10,FT9,FT10,M1,M2,27,28,29,30,31,EKG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MontageRaw = Fp1,Fp2,F3,F4,C3,C4,P3,P4,O1,O2,F7,F8,T7,T8,P7,P8,Fz,Cz,Pz,Oz,F9,F10,FT9,FT10,M1,M2,27,28,29,30,31,EKG,
+DataOffset = 0
+eeg_number = data                            
+technician_name =                                 
+last_meal =                 
+last_sleep =                 
+patient_state =                                                                                 
+activations =                                 
+sedation =                                                                                 
+impressions =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+summary =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+age =                 
+medications =                                                                                                                                                                                                                                                                 
+history =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+diagnosis =                                 
+interpretation =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+correlation =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+medical_record_number =                                 
+location =                                 
+referring_physician =                                                                 
+technical_info =                                                                                                                                 
+sleep =                                                                                 
+indication =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+alertness =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+RefName = REF
+DCUvPerBit = 0
+ExternalUvPerBit = 0
+DateEnd = 04/05/2001                      
+TimeEnd = 08:17:34.137                    
+MontageRawTypes = EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,EEG,
+[Events]
+0.000000	0	7	Montage: para-s.mtg Lines: 24
+Fp1-F9,,,,,,0,MONITOR
+F9-FT9,,,,,,0,MONITOR
+FT9-F7,,,,,,0,MONITOR
+Fp1-F7,,,,,,0,MONITOR
+F7-T7,,,,,,0,MONITOR
+T7-P7,,,,,,0,MONITOR
+P7-O1,,,,,,0,MONITOR
+Fp1-F3,,,,,,0,MONITOR
+F3-C3,,,,,,0,MONITOR
+C3-P3,,,,,,0,MONITOR
+P3-O1,,,,,,0,MONITOR
+Fp2-F10,,,,,,3,MONITOR
+F10-FT10,,,,,,3,MONITOR
+FT10-F8,,,,,,3,MONITOR
+Fp2-F8,,,,,,3,MONITOR
+F8-T8,,,,,,3,MONITOR
+T8-P8,,,,,,3,MONITOR
+P8-O2,,,,,,3,MONITOR
+Fp2-F4,,,,,,3,MONITOR
+F4-C4,,,,,,3,EKG
+C4-P4,,,,,,3,MONITOR
+P4-O2,,,,,,3,MONITOR
+M1-EKG,EKG,150,70,1,60,2,EKG
+ACC,,15,70,1,60,0
+782.000000	800	1	Sample
+0.000000	0	26	MPEG File Start: eeg.eeg.0001.mpg DeltaStartMs: -153
+1.997500	799	27	MPEG File End: eeg.eeg.0001.mpg DeltaEndMs: -648
+782.000000	800	26	MPEG File Start: eeg.eeg.0002.mpg DeltaStartMs: 142
+789.997500	3999	27	MPEG File End: eeg.eeg.0002.mpg DeltaEndMs: 151
+NextFile = eeg.001
